@@ -22,6 +22,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -75,7 +76,7 @@ public class ShopConfig {
         http.csrf(AbstractHttpConfigurer::disable)
         .csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")) // Disable CSRF for H2 console
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Session Creation Policy SessionCreationPolicy.IF_REQUIRED
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll())// Allow access to H2 console endpoints
                 .authorizeHttpRequests(auth ->auth.requestMatchers(SECURED_URLS.toArray(String[]::new)).authenticated()
@@ -86,7 +87,10 @@ public class ShopConfig {
 
 //        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
 
-        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable).crossOriginOpenerPolicy(Customizer.withDefaults())); // Allow H2 console to be displayed in a frame
+        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)
+                .crossOriginOpenerPolicy(Customizer.withDefaults()) // Allow H2 console to be displayed in a frame
+                .contentSecurityPolicy(contentSecurityPolicyConfig -> contentSecurityPolicyConfig.policyDirectives("script-selfless")) // Adds the X-XSS-Protection and Content-Security-Policy headers to your responses
+                .xssProtection(xss -> xss.headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK)));
         return http.build();
         
     }
