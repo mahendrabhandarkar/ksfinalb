@@ -68,6 +68,12 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Prototype JS -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>prototype</artifactId>
+			<version>1.7.3.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

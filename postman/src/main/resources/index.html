@@ -58,6 +58,10 @@
                                         <option>DELETE</option>
                                     </select>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="method" class="form-label">Request</label>
+                                    <textarea id="requestbody" class="textarea w-100 h-20"></textarea>
+                                </div>
                                 <button type="button" class="btn btn-primary" onclick="return getJSCall();">Send</button>
                             </form>
                         </div>
@@ -78,8 +82,9 @@
 <script>
     async function getJSCall() {
         var url = document.getElementById("endpoint").value;
-        var body = document.getElementById("method").value;
-        let data = {"url": url, "body": body};
+        var method = document.getElementById("method").value;
+        var body = document.getElementById("requestbody").value;
+        let data = {"url": url, "body": body, "method": method.toLowerCase(),"headers":{}};
         const response = await fetch("/test/proxyrequest", {
         method: "POST",
         headers: {
@@ -88,7 +93,10 @@
         body: JSON.stringify(data)
         });
         const responseBody = await response.text();
-        document.getElementById("response_body").innerHTML = responseBody;
+        const jsonString = responseBody;
+        const jsonObject = JSON.parse(jsonString);
+        document.getElementById("response_body").innerHTML = jsonObject.entity;
+        console.log(jsonObject.entity);
         return false;
     }
 </script>
