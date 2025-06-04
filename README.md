@@ -1,4 +1,5 @@
 # ksfinalb -- https://www.baeldung.com/java-neo4j -- Embedded Neo4J
+https://stackoverflow.com/questions/24412434/it-is-possible-to-start-an-embedded-instance-of-apache-spark-node -- Apache Spark Embedded Server
 
 ## Application Access Table
 
