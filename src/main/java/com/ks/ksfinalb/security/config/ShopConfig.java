@@ -38,8 +38,10 @@ public class ShopConfig {
     private final JwtAuthEntryPoint authEntryPoint;
 
     private static final List<String> SECURED_URLS =
-            List.of("/api/v1/carts/**", "/api/v1/cartItems/**");
+            List.of("/api/v1/carts/**", "/api/v1/cartItems/**", "/api/v1/auth/login", "/h2-console/**");
 
+    private static final List<String> NONSECURED_URLS =
+            List.of("/api/v1/auth/login", "/h2-console/**");
 
     @Bean
     public ModelMapper modelMapper() {
@@ -74,11 +76,11 @@ public class ShopConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.csrf(AbstractHttpConfigurer::disable)
-        .csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")) // Disable CSRF for H2 console
+        .csrf(csrf -> csrf.ignoringRequestMatchers(NONSECURED_URLS.toArray(String[]::new))) // Disable CSRF for H2 console
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Session Creation Policy SessionCreationPolicy.IF_REQUIRED
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/h2-console/**").permitAll())// Allow access to H2 console endpoints
+                        .requestMatchers(NONSECURED_URLS.toArray(String[]::new)).permitAll())// Allow access to H2 console endpoints
                 .authorizeHttpRequests(auth ->auth.requestMatchers(SECURED_URLS.toArray(String[]::new)).authenticated()
                         .anyRequest().permitAll());
         http.authenticationProvider(daoAuthenticationProvider());
