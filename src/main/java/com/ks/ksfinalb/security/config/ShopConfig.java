@@ -41,7 +41,7 @@ public class ShopConfig {
             List.of("/api/v1/carts/**", "/api/v1/cartItems/**", "/api/v1/auth/login", "/h2-console/**");
 
     private static final List<String> NONSECURED_URLS =
-            List.of("/api/v1/auth/login", "/h2-console/**");
+            List.of("/api/v1/auth/login", "/h2-console/**", "/api/v1/categories/all");
 
     @Bean
     public ModelMapper modelMapper() {

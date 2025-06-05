@@ -6,6 +6,7 @@ import com.ks.ksfinalb.exceptions.ResourceNotFoundException;
 import com.ks.ksfinalb.model.Category;
 import com.ks.ksfinalb.response.ApiResponse;
 import com.ks.ksfinalb.service.category.ICategoryService;
+import com.ks.ksfinalb.service.graphdb.IGraphDBService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +19,16 @@ import static org.springframework.http.HttpStatus.*;
 @RestController
 @RequestMapping("${api.prefix}/categories")
 public class CategoryController {
+
     private final ICategoryService categoryService;
+
+    private final IGraphDBService graphDBService;
 
     @GetMapping("/all")
     public ResponseEntity<ApiResponse> getAllCategories() {
         try {
+            graphDBService.doTransaction();
+
             List<Category> categories = categoryService.getAllCategories();
             return  ResponseEntity.ok(new ApiResponse("Found!", categories));
         } catch (Exception e) {
