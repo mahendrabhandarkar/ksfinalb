@@ -37,6 +37,7 @@
 		<maven-compler-plugin.version>3.14.0</maven-compler-plugin.version>
 		<lombok.version>1.18.36</lombok.version>
 		<owasp-dependency-check-maven>12.1.1</owasp-dependency-check-maven>
+		<spring-ai.version>1.0.0</spring-ai.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -162,12 +163,51 @@
 			<artifactId>neo4j</artifactId>
 			<version>5.8.0</version>
 		</dependency>
+		<!-- Spring AI Neo4j Vector Store -->
+		<!--<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-starter-vector-store-neo4j</artifactId>
+		</dependency>-->
+		<!-- Spring Data Neo4j -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-neo4j</artifactId>
 		</dependency>
+		<!-- Apache POI (Word/Excel) -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.4.1</version>
+		</dependency>
+		<!-- PDFBox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<!-- Spring AI (for embeddings, e.g., OpenAI) -->
+		<!--<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+			<version>1.0.0-M6</version>
+		</dependency>-->
 	</dependencies>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.ai</groupId>
+				<artifactId>spring-ai-bom</artifactId>
+				<version>${spring-ai.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<!--<plugin>
