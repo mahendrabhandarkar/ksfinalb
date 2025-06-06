@@ -1,5 +1,7 @@
 # ksfinalb -- https://www.baeldung.com/java-neo4j -- Embedded Neo4J
 https://stackoverflow.com/questions/24412434/it-is-possible-to-start-an-embedded-instance-of-apache-spark-node -- Apache Spark Embedded Server
+https://github.com/zestprime/springboot/tree/main/spring-ai-rag-db --- https://www.youtube.com/watch?v=WAx9W2rwgYU --- Spring AI - Build Chatbot for your Database using RAG pattern with locally running Ollama LLM model
+https://github.com/danvega/java-rag --- https://www.youtube.com/watch?v=6Pgmr7xMjiY --- Java + RAG: Create an AI-Powered Financial Advisor using Spring AI
 
 ## Application Access Table
 
