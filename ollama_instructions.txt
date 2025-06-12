@@ -1,3 +1,11 @@
 ollama pull smollm:135m
 ollama pull mxbai-embed-large
+ollama pull tinyllama:1.1b
+ollama run tinyllama:1.1b
 Spring AI Open AI vs Ollama
+
+curl -X POST http://localhost:11434/api/generate  -H "Content-Type: application/json"  -d '{"model": "llama3", "prompt": "Hello, are you running?"}'
+
+curl -X POST http://localhost:11434/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model": "llama3", "messages": [{"role": "user", "content": "Hello"}]}'
