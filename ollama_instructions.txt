@@ -11,3 +11,5 @@ curl -X POST http://localhost:11434/v1/chat/completions \
   -d '{"model": "llama3", "messages": [{"role": "user", "content": "Hello"}]}'
 
 Run any model of huggingface.com into ollama [example: https://huggingface.co/ubermenchh/sanskrit-to-english ]
+
+How to build an LLM from Scratch [ https://www.youtube.com/watch?v=ZLbVdvOoTKM ]
