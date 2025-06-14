@@ -1,0 +1,124 @@
+----------------------------------------------------------------------------------
+
+Nearest Neighbour --  Vector 2 D parsor --- HashValue --- 
+
+2D Object -- similarity search
+stostasthic --- Similarity search
+
+Java ML Library for Model Creation. Tensorflow used to create tensors, etc.
+
+Tightly Coupled Architecture
+
+ Kafka refers source as events [ex: Inventory, Order, Payment], Topics [Characterized event - identification of event] --
+ Kafka --- Producer, Kafka, Consumer
+ 
+ PubSub Model, Single Sendor Model -- 
+ Kafka relies on another servce named ZooKeeper -- a distrbuted cordination system - to function.
+ 
+ What is ZooKeeper --
+ -- Maintaining a register of all active brokers in the cluster.
+ Leader Election --
+ -- Each kafka partition has a leader broker
+ -- ZooKeeper facilities the selection of the leader
+ 
+ Metadata and configuration Management
+ 
+ Kraf concepts --- 
+ 
+ Kafka Core Concepts -- Producers --- Consumer [update inventory database].
+ 
+ Organizing and Scaling Orders
+ 
+ Partitions --- Divide topics into sections.
+			--- Resemble Kitchen stations
+			
+ Consumer Groups --- for Scalable Message Consumption
+ 
+ Rabbing MQ follow -- Single Queue Structure [example: TV channels].
+ Kafka --- Video on demand (streaming(.
+ 
+ Flink --- Apache Flink --- 
+ Kafka- is messaging system --
+ Flink -- High capabilities on processing --- Used for transformation -- Used for event streaming processing.
+ 
+ github.com // Kafka - Flink - Demo-Master --- kafka-ui
+ 
+ Apache Flink UI --- run to view on machine
+ 
+ To support python -- adding another library to support in flink.
+ 
+ maheboob.dev --- Developer Kafka
+ 
+--- Passed message to kafka --- Before to store data -----------
+
+Batch Processing -- Stream Processing ---
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+ Audit Logs at Confluent
+ 
+ Audit Logs contain information about who tried to do what, when they tried, and whether or not the system gave permission to proceed.
+ Sample Audit Log:
+ 
+ Organization Auditable Event Methods on Confluent:
+ 
+ Let's Build a Pipeline -- How to send audit logs E2E from generation to consumption
+ 
+ Decoupled and Asynchronous Operations
+ 
+ Source -- Ths is going to be Variety of microservices across multiple languages and cloud providers. The number of producers would increase over time but the set it still somewhat constant.
+ 
+ Backbone: Apache Kafka -- Acts as a powerful, highly available and durable queue for asynchronous operations: -- Message Reusabilty
+ 
+ Destionation: Apache kafka --- Serves as the primary destination for further processing, or feeding into long-term storage solutions and ideal for contineous processing and integration with other systems.
+ 
+ Multiple Topics -- 
+ Problem #1: Metadata
+ We don't know where to send it. Producer should not be sending out.
+ Solution: bind userid and orgId to mark cluster destination. And we will send it there. Now we need a Router Service that reads the metadata figures out the destination and sends them there.
+ 
+ Aspect Oriented Programming --- 
+ --- Every activity of user should be audited.
+ --- 
+ 
+ Destination Cluster --- Create topics and tell customer to go and consume it.
+ 
+ Amrapali Case --- Deleted the records and digital forensic agency. 
+ 
+ SIM tool logs can also be send to Kafka for events. 
+ 
+ Problem #2: Missing Metadata Problem.
+ You might run into solutions where the metadata generation has failed or is delayed. As a result, while sending the logs you'ill reject as the destination is absent.
+ 
+ Solution: Retries topic [Retry -1, Retry -2, Retry - 3].
+ 
+ Problem #3: Redaction and Internal Logs:
+ All the events produced may not be fit for consumption for the user. It may need additional filtering like removing internal users, internal IP addresses and internal audit logs.
+ 
+ Kafka Streams:
+ Sample Code
+ Horizontally Scalable
+ Exactly Once Processing
+ 
+ 2.5GB Heap
+ 
+ Logstash -- Send and reads to kafka also. but it is used lots of RAM.
+ 
+ Processor Service --- 
+ 
+ Problem #4: How to you make sure each service is sending Audit Logs?
+ Solution:
+ 
+ Kraft -- Broker
+ 
+ Health Check Audit Logs
+ 
+ - The Microservice need to continuously 
+ 
+ Maintaining the Pipeline: Metrics and Monitoring
+ 
+ --- Source Metrics -- Message Size
+ --- Processing Merics -- Events dropped per second
+ --- Router Metrics -- E2E Latency
+ 
+ https://developer.confluent.io/
