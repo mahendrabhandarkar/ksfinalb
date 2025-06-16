@@ -251,7 +251,7 @@ https://github.com/mehboobpatel/Kafka-Flink-Demo
 RNM
 self attention heads
 context ke andar context
-streamlid
+streamlit
 free colab
 amazon sagemaker studio lab
 ingested to neo4j server
