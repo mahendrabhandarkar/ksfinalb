@@ -244,3 +244,57 @@ Versatility: These tools support a broad range of use cases—text generation, s
 In summary:
 Ollama, OpenAI, and Mistral are platforms or tools that give you access to powerful AI models. You need them to build, test, and deploy AI-driven features in your applications—choosing between them depends on your requirements for privacy, customization, performance, and access to the latest AI technology.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://github.com/mehboobpatel/Kafka-Flink-Demo
+
+RNM
+self attention heads
+context ke andar context
+streamlid
+free colab
+amazon sagemaker studio lab
+ingested to neo4j server
+chunking
+embedding
+sevicenow_embeddings.json
+technology related embedding create
+Azure ML is too costly
+
+Sheet to final complaince sheet
+Save changes at runtime
+Streamlit
+Pandas
+AI Parser use karo
+winHT Track crawler --- Deepth First Search
+
+DoNot Track Reqeust --- Load Track Enable
+bipitika
+
+parameter optimize
+chunks, overlap, top-k-chunks
+
+
+Indexing, Embedding, etc
+
+deepseek -- chinese, ollama
+pypdf -- library to create python code
+
+Hyper Parameter Tunning
+
+Tender Tiger ---- 
+
+SHRM Tech 2.0 ---- 
+Resume Builder
+Product Search -- Project Skill
+Bid Response and Tender Matching
+
+Caching Realtime and Backup
+Query Richment
+Agentic 
+
+DeepSeek, Mishtrai 
+
+Neo4J Vector database best
+
+Wipe Coding -- for creating app
