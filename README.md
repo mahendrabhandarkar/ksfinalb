@@ -2,7 +2,7 @@
 https://stackoverflow.com/questions/24412434/it-is-possible-to-start-an-embedded-instance-of-apache-spark-node -- Apache Spark Embedded Server <br />
 https://github.com/zestprime/springboot/tree/main/spring-ai-rag-db --- https://www.youtube.com/watch?v=WAx9W2rwgYU --- Spring AI - Build Chatbot for your Database using RAG pattern with locally running Ollama LLM model <br />
 https://github.com/danvega/java-rag --- https://www.youtube.com/watch?v=6Pgmr7xMjiY --- Java + RAG: Create an AI-Powered Financial Advisor using Spring AI <br />
-https://community.taiga.io/t/taiga-30min-setup/170 --- Taiga: Your opensource agile project management software <br />
+https://community.taiga.io/t/taiga-30min-setup/170 --- Taiga: Your opensource agile project management software --- https://developers.plane.so/self-hosting/overview -- Plane tool <br />
 ## Application Access Table
 
 | Application    | Web Access (Public)                          | Web Access (After Login) | API Access (Public)         | API Access (Protected, JWT) | Mobile Access (Public)                        | Mobile Access (After Login) | API Access (Public)         | API Access (Protected, JWT) |
