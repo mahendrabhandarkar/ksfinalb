@@ -1,8 +1,10 @@
 package com.ks.ksfinalb.security.config;
 
+import com.ks.ksfinalb.model.stt.UrlAccessRule;
 import com.ks.ksfinalb.security.jwt.AuthTokenFilter;
 import com.ks.ksfinalb.security.jwt.JwtAuthEntryPoint;
 import com.ks.ksfinalb.security.user.ShopUserDetailsService;
+import com.ks.ksfinalb.sttimpl.UrlAccessRuleService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -10,12 +12,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.authorization.AuthorityAuthorizationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
+import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -36,7 +41,7 @@ import java.util.List;
 public class ShopConfig {
     private final ShopUserDetailsService userDetailsService;
     private final JwtAuthEntryPoint authEntryPoint;
-
+    private final UrlAccessRuleService urlAccessRuleService;
     private static final List<String> SECURED_URLS =
             List.of("/api/v1/carts/**", "/api/v1/cartItems/**", "/api/v1/auth/login", "/h2-console/**");
 
@@ -79,6 +84,13 @@ public class ShopConfig {
         .csrf(csrf -> csrf.ignoringRequestMatchers(NONSECURED_URLS.toArray(String[]::new))) // Disable CSRF for H2 console
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Session Creation Policy SessionCreationPolicy.IF_REQUIRED
+
+                .authorizeHttpRequests(authorize -> {
+                    for (UrlAccessRule rule : urlAccessRuleService.getAllRules()) {
+                        authorize.requestMatchers(rule.getPattern())
+                                .access(AuthorityAuthorizationManager.hasRole(rule.getAccess()));
+                    };
+                })
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(NONSECURED_URLS.toArray(String[]::new)).permitAll())// Allow access to H2 console endpoints
                 .authorizeHttpRequests(auth ->auth.requestMatchers(SECURED_URLS.toArray(String[]::new)).authenticated()
