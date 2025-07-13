@@ -22,12 +22,13 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
-     Set<String> defaultRoles =  Set.of("ROLE_ADMIN", "ROLE_USER");
-      createDefaultUserIfNotExits();
-        createDefaultRoleIfNotExits(defaultRoles);
-       createDefaultAdminIfNotExits();
+//     Set<String> defaultRoles =  Set.of("ROLE_ADMIN", "ROLE_USER");
+  //    createDefaultUserIfNotExits();
+  //      createDefaultRoleIfNotExits(defaultRoles);
+  //     createDefaultAdminIfNotExits();
     }
 
+/*
 
     private void createDefaultUserIfNotExits(){
         Role userRole = roleRepository.findByName("ROLE_USER").get();
@@ -36,6 +37,7 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
             if (userRepository.existsByEmail(defaultEmail)){
                 continue;
             }
+
             User user = new User();
             user.setFirstName("The User");
             user.setLastName("User" + i);
@@ -43,6 +45,7 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
             user.setPassword(passwordEncoder.encode("123456"));
             user.setRoles(Set.of(userRole));
             userRepository.save(user);
+
             System.out.println("Default vet user " + i + " created successfully.");
         }
     }
@@ -56,6 +59,7 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
             if (userRepository.existsByEmail(defaultEmail)){
                 continue;
             }
+
             User user = new User();
             user.setFirstName("Admin");
             user.setLastName("Admin" + i);
@@ -63,6 +67,7 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
             user.setPassword(passwordEncoder.encode("123456"));
             user.setRoles(Set.of(adminRole));
             userRepository.save(user);
+
             System.out.println("Default admin user " + i + " created successfully.");
         }
     }
@@ -72,5 +77,6 @@ public class DataInitializer implements ApplicationListener<ApplicationReadyEven
                 .map(Role:: new).forEach(roleRepository::save);
 
     }
+*/
 
 }
