@@ -3,6 +3,8 @@ https://stackoverflow.com/questions/24412434/it-is-possible-to-start-an-embedded
 https://github.com/zestprime/springboot/tree/main/spring-ai-rag-db --- https://www.youtube.com/watch?v=WAx9W2rwgYU --- Spring AI - Build Chatbot for your Database using RAG pattern with locally running Ollama LLM model <br />
 https://github.com/danvega/java-rag --- https://www.youtube.com/watch?v=6Pgmr7xMjiY --- Java + RAG: Create an AI-Powered Financial Advisor using Spring AI <br />
 https://community.taiga.io/t/taiga-30min-setup/170 --- Taiga: Your opensource agile project management software --- https://developers.plane.so/self-hosting/overview -- Plane tool <br />
+Optional enhancements like Prometheus Alertmanager, Jaeger (for distributed tracing UI), and exporters for PostgreSQL, MongoDB, and RabbitMQ may be considered in the future based on scalability and observability needs. -  <br />
+
 ## Application Access Table
 
 | Application    | Web Access (Public)                          | Web Access (After Login) | API Access (Public)         | API Access (Protected, JWT) | Mobile Access (Public)                        | Mobile Access (After Login) | API Access (Public)         | API Access (Protected, JWT) |
@@ -58,3 +60,4 @@ Until REGIONAL_CENTER can't get approved by SUPERADMIN, It can approve profiles.
 
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-RandomValue'; style-src 'self'; object-src 'none';">
 Content-Security-Policy -- <script nonce="RandomValue" type="text/javascript"></script>
+
