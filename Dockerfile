@@ -1,6 +1,6 @@
 #define base Docker image
-#postman build -t ksfinalb:latest . 
-#postman run -p 9091:8080 ksfinalb
+# postman build -t ksfinalb:latest . 
+# postman run -p 9091:8080 ksfinalb
 FROM openjdk:17
 LABEL maintainer="M B"
 ADD /target/ksfinalb-0.0.1-SNAPSHOT.jar ksfinalb.jar
