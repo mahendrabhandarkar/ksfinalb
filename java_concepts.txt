@@ -1,0 +1,5 @@
+transient -- No code Sychronization. 
+@Teansactional --
+@Embedded
+@Embeddable
+
