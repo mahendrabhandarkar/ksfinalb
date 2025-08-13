@@ -1,4 +1,4 @@
-transient -- No code Sychronization. 
+transient -- No code Sychronization. @Transient --- Hide data and insert in DB. not saved to DB
 @Teansactional --
 @Embedded
 @Embeddable
