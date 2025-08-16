@@ -2,4 +2,14 @@ transient -- No code Sychronization. @Transient --- Hide data and insert in DB. 
 @Teansactional --
 @Embedded
 @Embeddable
-
+hibernate.cfg.xml - Hibernate configuration file; JPQL is better
+@ManyToMany(fetch=FetchType.EAGER)
+private List<Course> courses; ---- LazyInitializationException
+-- interface based Projections vs DTO Creation (Constructor Expression / Manual Mapping)
+@Cacheable: Marks methods whose results should be cached.
+@CacheEvict: Removes specified items from the cache.
+@CachePut: Updates cache with new values
+By default cache gets stored in-memory. Both uses simple (ConcurrentMap) cache. Hibernate first checks if the entity (Employee) is already in the cache session. If its exist it returns the result. If not, it executes query and return result.
+spring.jpa.properties.hibernate.cache.use_second_level_cache=true
+spring.jpa.properties.hibernate.cache.use_query_cache=true
+CopyOnWriteArrayList<String> cowList = new CopyOnWriteArrayList<>(); cowList.remove("B"); --- // Wrap the list with Collections.unmodifiableList to make it unmodifiedable. If tried to modify, Unlike standard lists (i.e. ArrayList, etc), modifying it (add, remove, set) creates a new copy of the underlying array. Iterators from CopyOnWriteArrayList are fail-safe — meaning they do NOT throw ConcurrentModificationException, even if the list is modified during iteration.
