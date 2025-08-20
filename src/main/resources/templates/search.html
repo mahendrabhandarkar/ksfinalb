@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Jain Kalar Matrimony</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+             script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com;
+             style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com;
+             font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+             img-src 'self' data: https://images.unsplash.com https://randomuser.me https://upload.wikimedia.org;
+             connect-src 'self';">
+    <!-- External Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<!-- Header Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand text-danger fw-bold" href="index.html">
+            <i class="fas fa-heart"></i> Jain Kalar Matrimony
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="my-profile.html">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Search Results Section -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">Filter Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Age Range</label>
+                            <div class="d-flex gap-2">
+                                <select class="form-select">
+                                    <option>18</option>
+                                    <option>21</option>
+                                    <option>25</option>
+                                    <option selected>30</option>
+                                    <option>35</option>
+                                    <option>40</option>
+                                </select>
+                                <span class="align-self-center">to</span>
+                                <select class="form-select">
+                                    <option>25</option>
+                                    <option>30</option>
+                                    <option selected>35</option>
+                                    <option>40</option>
+                                    <option>45</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Religion</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Hindu</option>
+                                <option>Muslim</option>
+                                <option>Christian</option>
+                                <option>Sikh</option>
+                                <option>Jain</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mother Tongue</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Hindi</option>
+                                <option>Tamil</option>
+                                <option>Telugu</option>
+                                <option>Marathi</option>
+                                <option>Bengali</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Education</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Bachelors</option>
+                                <option>Masters</option>
+                                <option>PhD</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Occupation</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>IT Professional</option>
+                                <option>Doctor</option>
+                                <option>Engineer</option>
+                                <option>Teacher</option>
+                                <option>Business</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-danger w-100">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Content -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-0">Search Results (248 matches found)</h4>
+                    <select class="form-select w-auto">
+                        <option>Sort by: Newest First</option>
+                        <option>Sort by: Most Relevant</option>
+                        <option>Sort by: Last Active</option>
+                    </select>
+                </div>
+
+                <!-- Profile Cards -->
+                <div class="row g-4">
+                    <!-- Profile Card 1 -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid h-100" alt="Profile" style="object-fit: cover;">
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Priya Sharma</h5>
+                                        <p class="text-muted mb-2">28 years, 5'4", Hindu, Hindi</p>
+                                        <p class="card-text small">Software Engineer | Mumbai</p>
+                                        <p class="card-text small">MBA in Computer Science</p>
+                                        <div class="d-flex gap-2 mt-3">
+                                            <button class="btn btn-danger btn-sm">View Profile</button>
+                                            <button class="btn btn-outline-danger btn-sm">Express Interest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 2 -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid h-100" alt="Profile" style="object-fit: cover;">
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Amit Patel</h5>
+                                        <p class="text-muted mb-2">32 years, 5'10", Hindu, Gujarati</p>
+                                        <p class="card-text small">Business Owner | Ahmedabad</p>
+                                        <p class="card-text small">B.Com, MBA</p>
+                                        <div class="d-flex gap-2 mt-3">
+                                            <button class="btn btn-danger btn-sm">View Profile</button>
+                                            <button class="btn btn-outline-danger btn-sm">Express Interest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 3 -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="img-fluid h-100" alt="Profile" style="object-fit: cover;">
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anita Reddy</h5>
+                                        <p class="text-muted mb-2">29 years, 5'6", Hindu, Telugu</p>
+                                        <p class="card-text small">Doctor | Bangalore</p>
+                                        <p class="card-text small">MBBS, MD</p>
+                                        <div class="d-flex gap-2 mt-3">
+                                            <button class="btn btn-danger btn-sm">View Profile</button>
+                                            <button class="btn-outline-danger btn-sm">Express Interest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 4 -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="img-fluid h-100" alt="Profile" style="object-fit: cover;">
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rahul Verma</h5>
+                                        <p class="text-muted mb-2">31 years, 5'11", Hindu, Hindi</p>
+                                        <p class="card-text small">CA | Delhi</p>
+                                        <p class="card-text small">B.Com, CA</p>
+                                        <div class="d-flex gap-2 mt-3">
+                                            <button class="btn btn-danger btn-sm">View Profile</button>
+                                            <button class="btn-outline-danger btn-sm">Express Interest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2025 Jain Kalar Matrimony. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
