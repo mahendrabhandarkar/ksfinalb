@@ -59,5 +59,5 @@ Until REGIONAL_CENTER can't get approved by SUPERADMIN, It can approve profiles.
 > - **Actions:** `Code executed as a result of a transition.`
 
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-RandomValue'; style-src 'self'; object-src 'none';">
-Content-Security-Policy -- <script nonce="RandomValue" type="text/javascript"></script>
+Content-Security-Policy -- <script nonce="RandomValue" type="text/javascript"></script> and SRI (Subresource Integrity) --- 
 
