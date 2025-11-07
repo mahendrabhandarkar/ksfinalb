@@ -1,7 +1,7 @@
 Coding Standards:
 1. Use of Pure Javascript instead of JQuery, etc. Use Javascript handlers with catch errors.
 2. Create Fallback method for WebClient API. And use onErrorResume method in fallback.
-3. Use HtmlUtils.htmlEscape() or OWASP Java Encoder to prevent malicious scripts. XSS attack.
+3. Use HtmlUtils.htmlEscape() or OWASP Java Encoder to prevent malicious scripts. XSS attack. Use Spring Boot Available Utilities functions.
 4. https://www.baeldung.com/java-maven-owasp-dependency-check -- check CVSS report
 5. https://www.baeldung.com/spring-security-block-brute-force-authentication-attempts Brute Force Attempt, Implement Rate-Limit
 6. X-Frame-Options or Content-Security-Policy header added.
