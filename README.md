@@ -4,6 +4,7 @@ https://github.com/zestprime/springboot/tree/main/spring-ai-rag-db --- https://w
 https://github.com/danvega/java-rag --- https://www.youtube.com/watch?v=6Pgmr7xMjiY --- Java + RAG: Create an AI-Powered Financial Advisor using Spring AI <br />
 https://community.taiga.io/t/taiga-30min-setup/170 --- Taiga: Your opensource agile project management software --- https://developers.plane.so/self-hosting/overview -- Plane tool <br />
 Optional enhancements like Prometheus Alertmanager, Jaeger (for distributed tracing UI), and exporters for PostgreSQL, MongoDB, and RabbitMQ may be considered in the future based on scalability and observability needs. -  <br />
+https://copilot-instructions.md/ --- copilot specifications format. <br />
 
 ## Application Access Table
 
