@@ -31,7 +31,7 @@ public class WfQueueRoleRankUser implements Serializable {
     private WfQueueRoleRank wfQueueRoleRank;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="user_id", referencedColumnName = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name="user_id", referencedColumnName = "id", insertable = false, updatable = false)
     private User user;
 
 }

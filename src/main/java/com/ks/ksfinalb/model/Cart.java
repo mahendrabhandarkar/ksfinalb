@@ -25,7 +25,11 @@ public class Cart {
     private Set<CartItem> items = new HashSet<>();
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+   // @JoinColumn(name = "id")
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "id"
+    )
     private User user;
 
     public void addItem(CartItem item) {

@@ -16,9 +16,8 @@ INSERT INTO tbl_wf_queue_role_rank (role_rank_id, rank_id, role_process_id, stat
 
 INSERT INTO tbl_wf_queue_stt_transition_mst (stt_transition_id, node_event_id, parent_node_process_id, next_node_process_id) VALUES (1, 1, 1, 1);
 
-INSERT INTO "User" (user_id, first_name, last_name, email, password) VALUES (1, 'M', 'B', 'mb@test.com', 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+INSERT INTO "User" (id, first_name, last_name, email, password) VALUES (1, 'M', 'B', 'mb@test.com', 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
 insert into user_roles (user_id, role_id) VALUES (1,1);
 
 INSERT INTO tbl_wf_queue_role_rank_user (role_rank_user_id, role_rank_id, user_id, status) VALUES (1,1,1, true);
 INSERT INTO tbl_wf_queue_stt_flow_definition (stt_definition_id, stt_transition_id, record_id, record_type, role_rank_user_id, created_at, created_by) VALUES (1,1, 1, 'PROFILE', 1, NOW(), 1);
-
