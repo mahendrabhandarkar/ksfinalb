@@ -1,0 +1,14 @@
+Portfolio creation videos in figma -- search youtube videos.
+Learn Portfolio Creation using figma from youtube.
+Goto behance.net for uploading created portfolio.
+And also create case study in which mention - competitor analysis, Low-Fidelity WireFrame, Mid-Fidelity WireFrame, Design process, Mood Board (mention font size, font detals, color codes, etc).
+
+UI/UX design:
+-------------
+Low-Fidelity WireFrame -- Design created in paper through pen.
+Mid-Fidelity WireFrame -- Rough Design created in computer using boxes without color.
+High-Fidelity Wireframe -- A very detailed wireframe that looks almost like the final product.
+
+Stages of UI/UX design:
+
+Abode DreamWeaver Alternative
