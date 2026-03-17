@@ -16,3 +16,5 @@ Canva Affinity Free Tool
 
 ThemeForest
 Figma --- Free Template, WireFrames
+
+Stripe, RazorPay, JusPay, PhonePe, Cashfree, DirectPay, Mpesa, NowPayments, PayPal, Paystack, Paytm, PayUMoney, Perfect money, Onramper, UPIGateway
