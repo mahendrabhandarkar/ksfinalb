@@ -1,0 +1,29 @@
+App Type: Matrimonial Platform
+Architecture: Microservices
+Backend: Spring Boot
+Frontend: Thymeleaf
+Auth: JWT + RBAC
+Database: PostgreSQL
+PWA: Enabled
+Responsive Design: Required
+Security:
+  - CSRF Protection
+  - Rate Limiting
+  - BCrypt
+API Standards:
+  - REST
+  - OpenAPI
+Deployment:
+  - Docker
+  - Kubernetes
+Authentication:
+  Type: JWT
+  Password Hashing: BCrypt
+  Roles:
+    - USER
+    - ADMIN
+  Token Expiry: 15m
+  Refresh Token: Enabled
+Security:
+  CSRF: Enabled
+  Rate Limiting: Enabled

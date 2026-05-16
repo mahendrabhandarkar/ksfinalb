@@ -1,0 +1,70 @@
+project:
+  name: Matrimonial Platform
+  type: fullstack-web-app
+
+architecture:
+  style: microservices
+  pattern: domain-driven-design
+  communication:
+    sync: REST (Spring Boot)
+    async: Kafka (notifications, events)
+
+backend:
+  language: Java 21
+  framework: Spring Boot 3
+  security: Spring Security + JWT
+  api_style: REST
+  documentation: OpenAPI 3
+
+frontend:
+  framework: Thymeleaf
+  styling: TailwindCSS
+  responsive: true
+  pwa: true
+  dark_mode: true
+
+services:
+  - auth-service
+  - user-service
+  - profile-service
+  - search-service
+  - chat-service
+  - subscription-service
+  - notification-service
+  - admin-service
+  - gateway-service
+
+database:
+  primary: PostgreSQL
+  cache: Redis
+  migrations: Flyway
+
+security:
+  authentication: JWT
+  authorization: RBAC
+  password_hashing: BCrypt
+  csrf_protection: enabled
+  rate_limiting: enabled
+  input_validation: strict
+
+pwa:
+  enabled: true
+  offline_mode: partial
+  push_notifications: true
+  installable: true
+
+devops:
+  containerization: Docker
+  orchestration: Kubernetes
+  ci_cd: GitHub Actions
+
+observability:
+  logging: structured (JSON)
+  monitoring: Prometheus + Grafana
+  tracing: OpenTelemetry
+
+non_functional:
+  scalability: high
+  availability: 99.9%
+  performance: optimized APIs
+  security_level: enterprise
