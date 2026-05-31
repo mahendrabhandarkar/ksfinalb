@@ -9,6 +9,9 @@ public class DataTableResponse<T> {
     private long recordsFiltered;
     private List<T> data;
 
+    public DataTableResponse() {
+    }
+
     public DataTableResponse(int draw, long recordsTotal, long recordsFiltered, List<T> data) {
         this.draw = draw;
         this.recordsTotal = recordsTotal;

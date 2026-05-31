@@ -1,6 +1,8 @@
 package com.ks.ksfinalb.service.product;
 import com.ks.ksfinalb.dto.ProductDto;
 import com.ks.ksfinalb.model.Product;
+import com.ks.ksfinalb.model.datatables.DataTableRequest;
+import com.ks.ksfinalb.model.datatables.DataTableResponse;
 import com.ks.ksfinalb.request.AddProductRequest;
 import com.ks.ksfinalb.request.ProductUpdateRequest;
 
@@ -29,4 +31,10 @@ public interface IProductService {
     List<Product> findDistinctProductsByName();
 
     List<String> getAllDistinctBrands();
+
+    public DataTableResponse<Product> getProducts(
+            DataTableRequest request
+    );
+
+    public long totalProducts();
 }

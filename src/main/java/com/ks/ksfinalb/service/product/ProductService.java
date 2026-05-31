@@ -5,12 +5,20 @@ import com.ks.ksfinalb.dto.ProductDto;
 import com.ks.ksfinalb.exceptions.AlreadyExistsException;
 import com.ks.ksfinalb.exceptions.ResourceNotFoundException;
 import com.ks.ksfinalb.model.*;
+import com.ks.ksfinalb.model.datatables.DataTableColumn;
+import com.ks.ksfinalb.model.datatables.DataTableOrder;
+import com.ks.ksfinalb.model.datatables.DataTableRequest;
+import com.ks.ksfinalb.model.datatables.DataTableResponse;
 import com.ks.ksfinalb.repository.*;
 import com.ks.ksfinalb.request.AddProductRequest;
 import com.ks.ksfinalb.request.ProductUpdateRequest;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -185,4 +193,79 @@ public class ProductService implements IProductService {
                 .collect(Collectors.toList());
     }
 
+    public DataTableResponse<Product> getProducts(
+            DataTableRequest request
+    ) {
+
+        int page =
+                request.getStart()
+                        / request.getLength();
+
+        DataTableOrder order =
+                request.getOrder().get(0);
+
+        DataTableColumn column =
+                request.getColumns()
+                        .get(order.getColumn());
+
+        Sort sort =
+                order.getDir().equalsIgnoreCase("asc")
+                        ? Sort.by(column.getData()).ascending()
+                        : Sort.by(column.getData()).descending();
+
+        Pageable pageable =
+                PageRequest.of(
+                        page,
+                        request.getLength(),
+                        sort
+                );
+
+        String keyword =
+                request.getSearch().getValue();
+
+        Page<Product> products;
+
+        if (keyword != null
+                && !keyword.isBlank()) {
+
+            products =
+                    productRepository.search(
+                            keyword,
+                            pageable
+                    );
+
+        } else {
+
+            products =
+                    productRepository.findAll(
+                            pageable
+                    );
+        }
+
+        DataTableResponse<Product> response =
+                new DataTableResponse<>();
+
+        response.setDraw(
+                request.getDraw()
+        );
+
+        response.setRecordsTotal(
+                productRepository.count()
+        );
+
+        response.setRecordsFiltered(
+                products.getTotalElements()
+        );
+
+        response.setData(
+                products.getContent()
+        );
+
+        return response;
+    }
+
+    public long totalProducts() {
+
+        return productRepository.count();
+    }
 }

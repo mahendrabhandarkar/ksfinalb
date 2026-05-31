@@ -29,7 +29,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
@@ -43,10 +42,10 @@ public class ShopConfig {
     private final JwtAuthEntryPoint authEntryPoint;
     private final UrlAccessRuleService urlAccessRuleService;
     private static final List<String> SECURED_URLS =
-            List.of("/api/v1/carts/**", "/api/v1/cartItems/**", "/api/v1/auth/login", "/h2-console/**");
+            List.of("/api/v1/carts/**", "/api/v1/cartItems/**", "/api/v1/auth/login");
 
     private static final List<String> NONSECURED_URLS =
-            List.of("/api/v1/auth/login", "/h2-console/**", "/api/v1/categories/all");
+            List.of("/api/v1/auth/login", "/h2-console/**", "/api/v1/categories/all", "/products/datatable");
 
     @Bean
     public ModelMapper modelMapper() {
@@ -84,6 +83,13 @@ public class ShopConfig {
         .csrf(csrf -> csrf.ignoringRequestMatchers(NONSECURED_URLS.toArray(String[]::new))) // Disable CSRF for H2 console
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Session Creation Policy SessionCreationPolicy.IF_REQUIRED
+// IMPORTANT
+                .authorizeHttpRequests(auth -> auth.requestMatchers(
+                        "/webjars/**",
+                        "/css/**",
+                        "/js/**",
+                        "/images/**"
+                ).permitAll())
 
                 .authorizeHttpRequests(authorize -> {
                     for (UrlAccessRule rule : urlAccessRuleService.getAllRules()) {
