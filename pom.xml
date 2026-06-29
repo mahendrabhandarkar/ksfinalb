@@ -38,6 +38,7 @@
 		<lombok.version>1.18.36</lombok.version>
 		<owasp-dependency-check-maven>12.1.1</owasp-dependency-check-maven>
 		<spring-ai.version>1.0.0</spring-ai.version>
+		<keycloak.version>26.6.4</keycloak.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -286,6 +287,37 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
+		</dependency>
+		<!-- Keycloak and RazorPay Payment Gateway API -->
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-core</artifactId>
+			<version>${keycloak.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-server-spi</artifactId>
+			<version>${keycloak.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-server-spi-private -->
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-server-spi-private</artifactId>
+			<version>${keycloak.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-services</artifactId>
+			<version>${keycloak.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.razorpay</groupId>
+			<artifactId>razorpay-java</artifactId>
+			<version>1.4.8</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
