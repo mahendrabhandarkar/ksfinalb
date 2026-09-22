@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CONTENT SECURITY POLICY
+
+     Because this page contains NO inline scripts and NO inline styles,
+     the strictest possible policy needs neither 'unsafe-inline' nor nonces:
+
+       • scripts → external CDN allow-list only (Bootstrap bundle via <script src>)
+       • styles  → external CDN allow-list only (Bootstrap + Bootstrap Icons CSS)
+       • zero runtime fetches → connect-src falls back to default-src 'none'
+
+     PRODUCTION HEADER (serve from the server; frame-ancestors is ignored
+     in <meta> and must live in the real header):
+
+       Content-Security-Policy:
+         default-src 'none';
+         script-src 'self' https://cdn.jsdelivr.net;
+         style-src 'self' https://cdn.jsdelivr.net;
+         font-src https://cdn.jsdelivr.net;
+         img-src 'self' data: https://picsum.photos https://*.picsum.photos;
+         base-uri 'self'; form-action 'self'; frame-ancestors 'none';
+         upgrade-insecure-requests
+═══════════════════════════════════════════════════════════════════════════ -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; font-src https://cdn.jsdelivr.net; img-src 'self' data: https://picsum.photos https://*.picsum.photos; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+
+<title>Sangam Matrimony — where two journeys become one story</title>
+<meta name="description" content="Family-guided, verified matchmaking. A fully responsive matrimonial site built with Bootstrap classes only.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="13" cy="16" r="9" fill="none" stroke="%23dc3545" stroke-width="3"/><circle cx="19" cy="16" r="9" fill="none" stroke="%23ffc107" stroke-width="3"/></svg>'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<!-- Scrollspy + smooth scroll: both initialize purely from data attributes -->
+<body data-bs-spy="scroll" data-bs-target="#navLinks" data-bs-smooth-scroll="true" tabindex="0">
+<a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+<noscript>
+  <div class="alert alert-warning rounded-0 mb-0 text-center">
+    JavaScript is disabled — browsing profiles still works, but modals, tabs and the carousel need it.
+  </div>
+</noscript>
+
+<!-- ════════ NAVBAR (sticky = stays in flow, so anchors never hide under it) ════════ -->
+<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom py-3">
+  <div class="container-xl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="13" cy="17" r="9" fill="none" stroke="#dc3545" stroke-width="2.4"/><circle cx="21" cy="17" r="9" fill="none" stroke="#ffc107" stroke-width="2.4"/></svg>
+      <span class="fs-4 fw-semibold">Sangam <span class="d-block fs-6 fw-semibold text-uppercase text-warning-emphasis lh-1">Matrimony</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto mb-3 mb-lg-0 gap-lg-2" id="navLinks">
+        <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#matches">Matches</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#plans">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="d-flex flex-column flex-lg-row gap-2">
+        <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#trustOC">
+          <i class="bi bi-shield-check"></i> Safety
+        </button>
+        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">
+          Register free
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ════════ HERO ════════ -->
+<header id="top" class="py-5">
+  <div class="container-xl py-lg-4">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7">
+        <p class="small fw-semibold text-uppercase text-warning-emphasis mb-3">Family-guided matchmaking · since 1998</p>
+        <h1 class="display-4 fw-semibold lh-1">Where two journeys become <span class="fst-italic text-danger-emphasis">one story.</span></h1>
+        <p class="lead text-body-secondary mt-3">Sangam keeps the warmth of the rishta tradition your family trusts — verified profiles, horoscopes, elders in the loop — and adds a rigorous, human verification desk.</p>
+
+        <!-- Pure-HTML search: segmented radios (btn-check), selects, GET submit -->
+        <form class="bg-white border rounded-4 p-3 shadow-sm mt-4" action="#matches" method="get" role="search" aria-label="Find matches">
+          <div class="row g-2 align-items-center">
+            <div class="col-12 col-lg-auto">
+              <div class="btn-group w-100" role="group" aria-label="Looking for">
+                <input type="radio" class="btn-check" name="for" id="hBride" value="bride" checked>
+                <label class="btn btn-outline-danger" for="hBride"><i class="bi bi-gender-female"></i> A bride</label>
+                <input type="radio" class="btn-check" name="for" id="hGroom" value="groom">
+                <label class="btn btn-outline-danger" for="hGroom"><i class="bi bi-gender-male"></i> A groom</label>
+              </div>
+            </div>
+            <div class="col-6 col-lg">
+              <label class="visually-hidden" for="hAge">Age band</label>
+              <select class="form-select" id="hAge" name="age">
+                <option value="any" selected>Any age</option>
+                <option value="24-28">24 – 28</option>
+                <option value="29-33">29 – 33</option>
+                <option value="34+">34 +</option>
+              </select>
+            </div>
+            <div class="col-6 col-lg">
+              <label class="visually-hidden" for="hCity">City</label>
+              <select class="form-select" id="hCity" name="city">
+                <option value="any" selected>Any city</option>
+                <option>Mumbai</option><option>Delhi NCR</option><option>Bengaluru</option>
+                <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+                <option>Kolkata</option><option>Jaipur</option>
+              </select>
+            </div>
+            <div class="col-12 col-lg-auto">
+              <button class="btn btn-danger w-100" type="submit"><i class="bi bi-search-heart"></i> Find matches</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row row-cols-3 g-3 pt-4">
+          <div class="col">
+            <div class="display-6 fw-semibold text-danger-emphasis">12,400+</div>
+            <div class="small text-uppercase text-body-secondary">Weddings</div>
+          </div>
+          <div class="col">
+            <div class="display-6 fw-semibold text-danger-emphasis">1.8 lakh</div>
+            <div class="small text-uppercase text-body-secondary">Verified profiles</div>
+          </div>
+          <div class="col">
+            <div class="display-6 fw-semibold text-danger-emphasis">26</div>
+            <div class="small text-uppercase text-body-secondary">Cities in India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="position-relative mx-auto">
+          <img src="https://picsum.photos/seed/sg-hero/720/840.jpg" width="720" height="840" fetchpriority="high"
+               class="w-100 object-fit-cover rounded-top-5 rounded-bottom-4 shadow" alt="A couple at their wedding ceremony">
+          <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 translate-middle mt-4 p-3 d-none d-sm-inline-flex align-items-center gap-2">
+            <i class="bi bi-flower1"></i> Est. 1998 · 26 cities
+          </span>
+          <div class="card position-absolute bottom-0 start-0 translate-middle-y ms-2 shadow rounded-4 d-none d-md-flex flex-row align-items-center gap-2 p-2 pe-3">
+            <img src="https://picsum.photos/seed/sg-pair-a/96/96.jpg" width="44" height="44" class="rounded-circle" alt="Meera">
+            <img src="https://picsum.photos/seed/sg-pair-b/96/96.jpg" width="44" height="44" class="rounded-circle ms-n3 border border-2 border-white" alt="Aditya">
+            <div>
+              <div class="small fw-semibold">Meera &amp; Aditya</div>
+              <div class="small text-body-secondary">Matched 94% · Married Dec '24</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ TRUST BAR ════════ -->
+<div class="border-top bg-body-tertiary">
+  <div class="container-xl py-4">
+    <div class="row row-cols-2 row-cols-lg-4 g-4 text-center text-lg-start">
+      <div class="col d-flex align-items-center gap-3 justify-content-center justify-content-lg-start">
+        <i class="bi bi-patch-check-fill fs-3 text-danger-emphasis"></i>
+        <span class="small fw-semibold">Every profile verified by humans within 24 hours</span>
+      </div>
+      <div class="col d-flex align-items-center gap-3 justify-content-center justify-content-lg-start">
+        <i class="bi bi-lock-fill fs-3 text-danger-emphasis"></i>
+        <span class="small fw-semibold">Photos private until you express interest</span>
+      </div>
+      <div class="col d-flex align-items-center gap-3 justify-content-center justify-content-lg-start">
+        <i class="bi bi-people-fill fs-3 text-danger-emphasis"></i>
+        <span class="small fw-semibold">Families stay in the loop, always</span>
+      </div>
+      <div class="col d-flex align-items-center gap-3 justify-content-center justify-content-lg-start">
+        <i class="bi bi-star-fill fs-3 text-warning-emphasis"></i>
+        <span class="small fw-semibold">4.8 / 5 from 31,000+ member reviews</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ HOW IT WORKS ════════ -->
+<section id="how" class="py-5">
+  <div class="container-xl py-lg-4">
+    <div class="row align-items-end g-3 mb-5">
+      <div class="col-lg-7">
+        <p class="small fw-semibold text-uppercase text-warning-emphasis mb-2">The process</p>
+        <h2 class="display-6 fw-semibold lh-1">Four steps, one celebration</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="text-body-secondary mb-0">No endless swiping. Sangam moves at the pace families have always trusted — just with better information.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="bg-body-tertiary rounded-4 p-4 h-100">
+          <div class="display-5 fst-italic text-danger-emphasis">01</div>
+          <h3 class="h5 mt-2">Share your bio-data</h3>
+          <p class="small text-body-secondary mb-0">Tell your story — background, career, family and what you seek. Our desk verifies every profile within 24 hours.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="bg-body-tertiary rounded-4 p-4 h-100">
+          <div class="display-5 fst-italic text-danger-emphasis">02</div>
+          <h3 class="h5 mt-2">Browse with intent</h3>
+          <p class="small text-body-secondary mb-0">Search by community, city and age band. Every match card carries the facts that matter, up front.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="bg-body-tertiary rounded-4 p-4 h-100">
+          <div class="display-5 fst-italic text-danger-emphasis">03</div>
+          <h3 class="h5 mt-2">Express interest</h3>
+          <p class="small text-body-secondary mb-0">Families connect only when both sides have said yes — never before, never without consent.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="bg-body-tertiary rounded-4 p-4 h-100">
+          <div class="display-5 fst-italic text-danger-emphasis">04</div>
+          <h3 class="h5 mt-2">Meet &amp; bless</h3>
+          <p class="small text-body-secondary mb-0">Our matchmakers coordinate calls and meetings until the day two families become one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MATCHES (tab switching = real, data-attribute-driven filtering) ════════ -->
+<section id="matches" class="py-5 border-top">
+  <div class="container-xl py-lg-4">
+    <div class="row align-items-end g-3 mb-4">
+      <div class="col-lg-7">
+        <p class="small fw-semibold text-uppercase text-warning-emphasis mb-2">The matches</p>
+        <h2 class="display-6 fw-semibold lh-1">This week's shortlist</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="text-body-secondary mb-0">Hand-picked by our matchmakers every Sunday. Tap any card for the full bio-data.</p>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills gap-2 mb-4" id="matchTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tBrides" type="button" role="tab" aria-selected="true">Brides</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tGrooms" type="button" role="tab" aria-selected="false">Grooms</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tNew" type="button" role="tab" aria-selected="false">New this week <span class="badge text-bg-danger ms-1">2</span></button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- ── Brides ── -->
+      <div class="tab-pane fade show active" id="tBrides" role="tabpanel">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-ananya/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Ananya, product designer from Bengaluru">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Ananya, 27</h3>
+                <p class="text-body-secondary small mb-2">Product Designer · Bengaluru</p>
+                <p class="small mb-0">NID Ahmedabad · 5'5&quot; · Vegetarian · Hindu</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pAnanya">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Ananya%20(SGM-1024)" aria-label="Send interest in Ananya"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-meera/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Meera, cardiologist from Pune">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Meera, 29</h3>
+                <p class="text-body-secondary small mb-2">Cardiologist · Pune</p>
+                <p class="small mb-0">DM Cardio · 5'4&quot; · Vegetarian · Hindu</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pMeera">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Meera%20(SGM-1027)" aria-label="Send interest in Meera"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-aisha/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Aisha, architect from Hyderabad">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Aisha, 26</h3>
+                <p class="text-body-secondary small mb-2">Architect · Hyderabad</p>
+                <p class="small mb-0">SPA Delhi · 5'6&quot; · Non-veg · Muslim</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pAisha">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Aisha%20(SGM-1031)" aria-label="Send interest in Aisha"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-diya/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Diya, chartered accountant from Mumbai">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Diya, 25</h3>
+                <p class="text-body-secondary small mb-2">Chartered Accountant · Mumbai</p>
+                <p class="small mb-0">CA · 5'3&quot; · Jain · Jain</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pDiya">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Diya%20(SGM-1035)" aria-label="Send interest in Diya"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Grooms ── -->
+      <div class="tab-pane fade" id="tGrooms" role="tabpanel">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-arjun/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Arjun, software architect from Bengaluru">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Arjun, 29</h3>
+                <p class="text-body-secondary small mb-2">Software Architect · Bengaluru</p>
+                <p class="small mb-0">IIT Bombay · 5'10&quot; · Non-veg · Hindu</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pArjun">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Arjun%20(SGM-2044)" aria-label="Send interest in Arjun"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-kabir/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Kabir, entrepreneur from Delhi">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Kabir, 31</h3>
+                <p class="text-body-secondary small mb-2">Entrepreneur · Delhi NCR</p>
+                <p class="small mb-0">SRCC Delhi · 6'0&quot; · Vegetarian · Hindu</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pKabir">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Kabir%20(SGM-2048)" aria-label="Send interest in Kabir"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-farhan/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Farhan, data scientist from Hyderabad">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Farhan, 28</h3>
+                <p class="text-body-secondary small mb-2">Data Scientist · Hyderabad</p>
+                <p class="small mb-0">IIT Kanpur · 5'9&quot; · Non-veg · Muslim</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pFarhan">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Farhan%20(SGM-2051)" aria-label="Send interest in Farhan"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="position-relative">
+                <img src="https://picsum.photos/seed/sg-vikram/480/600.jpg" width="480" height="600" class="card-img-top object-fit-cover" alt="Vikram, textile exporter from Jaipur">
+                <span class="badge text-bg-danger position-absolute top-0 end-0 m-2"><i class="bi bi-patch-check-fill"></i> Verified</span>
+              </div>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Vikram, 32</h3>
+                <p class="text-body-secondary small mb-2">Textile Exporter · Jaipur</p>
+                <p class="small mb-0">NMIMS · 6'0&quot; · Jain · Jain</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+                <button class="btn btn-danger btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#pVikram">View profile</button>
+                <a class="btn btn-outline-danger btn-sm" href="mailto:interests@sangam.example?subject=Interest%20in%20Vikram%20(SGM-2055)" aria-label="Send interest in Vikram"><i class="bi bi-send"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── New this week ── -->
+      <div class="tab-pane fade" id="tNew" role="tabpanel">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-4">
+                  <img src="https://picsum.photos/seed/sg-aisha/480/600.jpg" width="480" height="600" class="w-100 h-100 object-fit-cover" alt="Aisha, architect from Hyderabad">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <span class="badge text-bg-warning mb-2">New · joined 5 days ago</span>
+                    <h3 class="h5 mb-1">Aisha, 26</h3>
+                    <p class="text-body-secondary small mb-2">Architect · Hyderabad · Muslim</p>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#pAisha">View profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-4">
+                  <img src="https://picsum.photos/seed/sg-farhan/480/600.jpg" width="480" height="600" class="w-100 h-100 object-fit-cover" alt="Farhan, data scientist from Hyderabad">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <span class="badge text-bg-warning mb-2">New · joined 3 days ago</span>
+                    <h3 class="h5 mb-1">Farhan, 28</h3>
+                    <p class="text-body-secondary small mb-2">Data Scientist · Hyderabad · Muslim</p>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#pFarhan">View profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STORIES (carousel via data attributes) ════════ -->
+<section id="stories" class="py-5 bg-body-tertiary border-top">
+  <div class="container-xl py-lg-4">
+    <p class="small fw-semibold text-uppercase text-warning-emphasis mb-2">Success stories</p>
+    <h2 class="display-6 fw-semibold lh-1 mb-5">Someday is now somebody's anniversary.</h2>
+
+    <div id="storiesCar" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="7000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row g-4 g-lg-5 align-items-center">
+            <div class="col-lg-7">
+              <p class="display-4 text-warning-emphasis lh-1 mb-3" aria-hidden="true">&ldquo;</p>
+              <blockquote class="fs-3 fst-italic fw-medium lh-base mb-0">The matchmakers introduced our families first, and that changed everything. Within a month both sides had said yes.</blockquote>
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="d-flex">
+                  <img src="https://picsum.photos/seed/sg-pair-a/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white" alt="Meera">
+                  <img src="https://picsum.photos/seed/sg-pair-b/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white ms-n3" alt="Aditya">
+                </div>
+                <div>
+                  <span class="fw-semibold fs-5">Meera &amp; Aditya</span>
+                  <span class="d-block small text-uppercase text-body-secondary">Married in Jaipur · December 2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img src="https://picsum.photos/seed/sg-story-1/560/640.jpg" width="560" height="640" class="w-100 rounded-4 object-fit-cover shadow-sm" alt="Meera and Aditya's wedding in Jaipur" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row g-4 g-lg-5 align-items-center">
+            <div class="col-lg-7">
+              <p class="display-4 text-warning-emphasis lh-1 mb-3" aria-hidden="true">&ldquo;</p>
+              <blockquote class="fs-3 fst-italic fw-medium lh-base mb-0">Our parents spoke first, and that changed everything. This felt like the rishta system we grew up trusting — finally fair to the two of us.</blockquote>
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="d-flex">
+                  <img src="https://picsum.photos/seed/sg-pair-c/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white" alt="Simran">
+                  <img src="https://picsum.photos/seed/sg-pair-d/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white ms-n3" alt="Karan">
+                </div>
+                <div>
+                  <span class="fw-semibold fs-5">Simran &amp; Karan</span>
+                  <span class="d-block small text-uppercase text-body-secondary">Married in Amritsar · February 2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img src="https://picsum.photos/seed/sg-story-2/560/640.jpg" width="560" height="640" class="w-100 rounded-4 object-fit-cover shadow-sm" alt="Simran and Karan's wedding in Amritsar" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row g-4 g-lg-5 align-items-center">
+            <div class="col-lg-7">
+              <p class="display-4 text-warning-emphasis lh-1 mb-3" aria-hidden="true">&ldquo;</p>
+              <blockquote class="fs-3 fst-italic fw-medium lh-base mb-0">He sent the first interest on a Tuesday. By Diwali we were picking wedding dates together — with both mothers on the call.</blockquote>
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="d-flex">
+                  <img src="https://picsum.photos/seed/sg-pair-e/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white" alt="Aisha">
+                  <img src="https://picsum.photos/seed/sg-pair-f/96/96.jpg" width="56" height="56" class="rounded-circle border border-3 border-white ms-n3" alt="Farhan">
+                </div>
+                <div>
+                  <span class="fw-semibold fs-5">Aisha &amp; Farhan</span>
+                  <span class="d-block small text-uppercase text-body-secondary">Married in Hyderabad · November 2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img src="https://picsum.photos/seed/sg-story-3/560/640.jpg" width="560" height="640" class="w-100 rounded-4 object-fit-cover shadow-sm" alt="Aisha and Farhan's wedding in Hyderabad" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#storiesCar" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Story one"></button>
+        <button type="button" data-bs-target="#storiesCar" data-bs-slide-to="1" aria-label="Story two"></button>
+        <button type="button" data-bs-target="#storiesCar" data-bs-slide-to="2" aria-label="Story three"></button>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2 mt-4">
+      <button class="btn btn-outline-danger rounded-circle" type="button" data-bs-target="#storiesCar" data-bs-slide="prev" aria-label="Previous story"><i class="bi bi-arrow-left"></i></button>
+      <button class="btn btn-outline-danger rounded-circle" type="button" data-bs-target="#storiesCar" data-bs-slide="next" aria-label="Next story"><i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MEMBERSHIP ════════ -->
+<section id="plans" class="py-5">
+  <div class="container-xl py-lg-4">
+    <div class="text-center mb-5">
+      <p class="small fw-semibold text-uppercase text-warning-emphasis mb-2">Membership</p>
+      <h2 class="display-6 fw-semibold lh-1">Begin simply. Go deeper when you're ready.</h2>
+    </div>
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="card-body p-4 d-flex flex-column">
+            <h3 class="h4">Shubh Aarambh</h3>
+            <p class="small text-body-secondary">Everything you need to begin the search, free for as long as it takes.</p>
+            <div class="display-6 fw-semibold">₹0 <span class="fs-6 fw-normal text-body-secondary">forever</span></div>
+            <ul class="list-unstyled small d-grid gap-2 mt-3 mb-4">
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> Full profile with photos &amp; horoscope</li>
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> Browse, search and shortlist freely</li>
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> 5 interests every month</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Create free profile</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card h-100 text-bg-danger shadow rounded-4 position-relative">
+          <span class="badge rounded-pill text-bg-warning position-absolute top-0 start-50 translate-middle p-2">Most chosen</span>
+          <div class="card-body p-4 d-flex flex-column">
+            <h3 class="h4">Sangam Preferred</h3>
+            <p class="small text-opacity-75">For serious searchers who want conversation to start sooner.</p>
+            <div class="display-6 fw-semibold">₹2,499 <span class="fs-6 fw-normal text-opacity-75">3 months</span></div>
+            <ul class="list-unstyled small d-grid gap-2 mt-3 mb-4">
+              <li><i class="bi bi-check2-circle text-warning"></i> Unlimited interests &amp; priority verification</li>
+              <li><i class="bi bi-check2-circle text-warning"></i> Direct chat after mutual interest</li>
+              <li><i class="bi bi-check2-circle text-warning"></i> Full horoscope-matching reports</li>
+            </ul>
+            <button class="btn btn-light w-100 mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Choose Preferred</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="card-body p-4 d-flex flex-column">
+            <h3 class="h4">Sangam Heritage</h3>
+            <p class="small text-body-secondary">A dedicated matchmaker who works your case like family would.</p>
+            <div class="display-6 fw-semibold">₹7,999 <span class="fs-6 fw-normal text-body-secondary">12 months</span></div>
+            <ul class="list-unstyled small d-grid gap-2 mt-3 mb-4">
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> Dedicated human matchmaker</li>
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> Offline meeting planning, end to end</li>
+              <li><i class="bi bi-check2-circle text-danger-emphasis"></i> Enhanced background &amp; identity checks</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Talk to a matchmaker</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-body-secondary small mt-4 mb-0">Every membership includes identity verification on profiles you contact. Cancel anytime — no questions, no fine print.</p>
+  </div>
+</section>
+
+<!-- ════════ FAQ (accordion via data attributes) ════════ -->
+<section id="faq" class="py-5 border-top">
+  <div class="container-xl py-lg-4">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <p class="small fw-semibold text-uppercase text-warning-emphasis mb-2">Trust &amp; safety</p>
+        <h2 class="display-6 fw-semibold lh-1">Questions families ask us first</h2>
+        <p class="text-body-secondary mt-3">Can't find your answer here? <a href="#" class="link-danger link-underline" data-bs-toggle="offcanvas" data-bs-target="#trustOC">Read our full safety promise</a> or write to <a class="link-danger link-underline" href="mailto:trust@sangam.example">trust@sangam.example</a>.</p>
+      </div>
+      <div class="col-lg-8">
+        <div class="accordion" id="faqAcc">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">How do you verify profiles?</button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+              <div class="accordion-body small text-body-secondary">Government-ID checks, a live selfie match, and education/employment proof for every profile before it goes live. Our desk re-verifies randomly through the membership.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Who can see my photos and details?</button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body small text-body-secondary">Only registered, ID-verified members. Photos stay blurred and contact details hidden until you choose to express interest in someone.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can my parents manage the account with me?</button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body small text-body-secondary">Yes — up to three family members can be linked to a profile with their own login, and conversations can be set to family-moderated mode.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What if a paid plan doesn't work out?</button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body small text-body-secondary">Full refund within 7 days of purchase, no questions asked. After that, memberships are paused — not lost — whenever you ask.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA BAND ════════ -->
+<section class="py-5">
+  <div class="container-xl">
+    <div class="text-bg-danger rounded-5 p-5 text-center">
+      <h2 class="display-6 fw-semibold">Your story starts with one profile.</h2>
+      <p class="text-opacity-75 mb-4">Free forever. Verified by humans within 24 hours. Families welcome from day one.</p>
+      <button class="btn btn-warning btn-lg fw-semibold" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Register free <i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="text-bg-dark pt-5" data-bs-theme="dark">
+  <div class="container-xl">
+    <div class="row g-4 g-lg-5 pb-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 text-white mb-3" href="#top">
+          <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="13" cy="17" r="9" fill="none" stroke="#ffc107" stroke-width="2.4"/><circle cx="21" cy="17" r="9" fill="none" stroke="#ffffff" stroke-width="2.4"/></svg>
+          <span class="fs-4 fw-semibold">Sangam</span>
+        </a>
+        <p class="small text-body-secondary">The confluence of tradition and choice. Verified profiles, patient matchmakers, and families who stay in the loop.</p>
+        <p class="small text-body-secondary"><i class="bi bi-shield-check text-warning"></i> Secured by a strict Content-Security-Policy — no inline scripts, no inline styles, only allow-listed CDNs.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="small text-uppercase text-warning fw-bold">Explore</h4>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="#how">How it works</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="#matches">Matches</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="#stories">Stories</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="#plans">Membership</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="small text-uppercase text-warning fw-bold">Trust</h4>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="#" data-bs-toggle="offcanvas" data-bs-target="#trustOC">Safety promise</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="mailto:trust@sangam.example">Report a profile</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="mailto:care@sangam.example">Contact care team</a>
+      </div>
+      <div class="col-lg-4">
+        <h4 class="small text-uppercase text-warning fw-bold">The Sunday Rishta</h4>
+        <p class="small text-body-secondary">One thoughtful letter a week — a real couple's story, and three profiles worth meeting.</p>
+        <form class="d-flex gap-2" action="#top" method="get">
+          <label class="visually-hidden" for="nlEmail">Email address</label>
+          <input type="email" class="form-control rounded-pill" id="nlEmail" name="email" placeholder="you@example.com" required>
+          <button class="btn btn-danger rounded-pill px-3" type="submit" aria-label="Subscribe"><i class="bi bi-envelope-paper-heart"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between gap-2 border-top border-secondary-subtle py-4 small text-body-secondary">
+      <span>© 2025 Sangam Matrimony — where two journeys become one story.</span>
+      <span>Made with care in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ SAFETY OFFCANVAS (static content, data-attribute driven) ════════ -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="trustOC" aria-labelledby="trustTitle">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-semibold" id="trustTitle"><i class="bi bi-shield-check text-danger"></i> Our safety promise</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex gap-3 border-0 px-0">
+        <i class="bi bi-person-badge fs-4 text-danger-emphasis"></i>
+        <span class="small"><b class="d-block">Government-ID verification</b>Every member, every time — before a single photo is visible.</span>
+      </li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0">
+        <i class="bi bi-images fs-4 text-danger-emphasis"></i>
+        <span class="small"><b class="d-block">Watermarked, human-reviewed photos</b>Nothing automated. Every image is checked by our desk.</span>
+      </li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0">
+        <i class="bi bi-eye-slash fs-4 text-danger-emphasis"></i>
+        <span class="small"><b class="d-block">Privacy by default</b>Contact details stay hidden until interest is mutual.</span>
+      </li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0">
+        <i class="bi bi-telephone-fill fs-4 text-danger-emphasis"></i>
+        <span class="small"><b class="d-block">24×7 report line</b>Flag any profile; a human responds within the hour.</span>
+      </li>
+    </ul>
+    <a class="btn btn-danger w-100 mt-4" href="mailto:trust@sangam.example?subject=Safety%20question"><i class="bi bi-envelope-fill"></i> Ask our trust team</a>
+  </div>
+</div>
+
+<!-- ════════ REGISTER MODAL (native HTML validation, no JS written by us) ════════ -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="regTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0 pb-0">
+        <div>
+          <h2 class="modal-title h4 fw-semibold" id="regTitle">Create your free profile</h2>
+          <p class="text-body-secondary small mb-0">Takes two minutes. Verified by humans within 24 hours.</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="modal-body" action="#top" method="get">
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label small fw-semibold" for="rName">Full name</label>
+            <input type="text" class="form-control" id="rName" name="name" minlength="3" placeholder="e.g. Ananya Iyer" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small fw-semibold" for="rEmail">Email</label>
+            <input type="email" class="form-control" id="rEmail" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small fw-semibold" for="rPhone">Mobile (10 digits)</label>
+            <input type="tel" class="form-control" id="rPhone" name="phone" inputmode="numeric" pattern="[0-9]{10}" placeholder="9876543210" required>
+          </div>
+          <div class="col-12">
+            <span class="form-label small fw-semibold d-block">Looking to marry</span>
+            <div class="btn-group" role="group" aria-label="Looking to marry">
+              <input type="radio" class="btn-check" name="seek" id="rSeekB" value="bride" checked>
+              <label class="btn btn-outline-danger" for="rSeekB">A bride</label>
+              <input type="radio" class="btn-check" name="seek" id="rSeekG" value="groom">
+              <label class="btn btn-outline-danger" for="rSeekG">A groom</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-label small fw-semibold" for="rCommunity">Community</label>
+            <select class="form-select" id="rCommunity" name="community" required>
+              <option value="" selected>Choose…</option>
+              <option>Hindu</option><option>Muslim</option><option>Christian</option>
+              <option>Sikh</option><option>Jain</option><option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-label small fw-semibold" for="rCity">City</label>
+            <select class="form-select" id="rCity" name="city" required>
+              <option value="" selected>Choose…</option>
+              <option>Mumbai</option><option>Delhi NCR</option><option>Bengaluru</option>
+              <option>Hyderabad</option><option>Chennai</option><option>Pune</option>
+              <option>Kolkata</option><option>Jaipur</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-4">
+            <label class="form-label small fw-semibold" for="rAge">Age</label>
+            <input type="number" class="form-control" id="rAge" name="age" min="21" max="70" placeholder="27" required>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rAgree" required>
+              <label class="form-check-label small" for="rAgree">I confirm these details are true and accept the member terms.</label>
+            </div>
+          </div>
+          <div class="col-12 d-grid">
+            <button class="btn btn-danger btn-lg" type="submit">Create my profile <i class="bi bi-flower1"></i></button>
+          </div>
+          <div class="col-12">
+            <p class="small text-body-secondary mb-0"><i class="bi bi-info-circle"></i> Demo form: it submits to this page via GET. In production, point <code>action</code> at your backend — the CSP allows posts to your own origin only (<code>form-action 'self'</code>).</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PROFILE MODALS (one per profile — static, data-attribute driven) ════════ -->
+
+<div class="modal fade" id="pAnanya" tabindex="-1" aria-labelledby="pAnanyaT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-ananya/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Ananya">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pAnanyaT">Ananya Iyer, 27</h2>
+        <p class="text-body-secondary">Product Designer · Bengaluru · Hindu</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">Mornings begin with filter coffee and Figma; weekends are for treks near Nandi Hills and noisy family lunches.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">NID Ahmedabad</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'5&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Rohini</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">9 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-1024</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Iyer family from Kochi — father a retired banker, mother a school principal; one elder brother, married.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Bharatanatyam</span> <span class="badge rounded-pill text-bg-light border">Trekking</span> <span class="badge rounded-pill text-bg-light border">Pottery</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Ananya%20(SGM-1024)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pMeera" tabindex="-1" aria-labelledby="pMeeraT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-meera/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Meera">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pMeeraT">Meera Kulkarni, 29</h2>
+        <p class="text-body-secondary">Cardiologist · Pune · Hindu</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">Cardiology is my calling; I believe laughter is preventive medicine and Sunday lunch is non-negotiable.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">MBBS, DM Cardio</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'4&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Anuradha</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">21 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-1027</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Kulkarni family from Pune; both parents doctors; younger sister studying law.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Classical music</span> <span class="badge rounded-pill text-bg-light border">Marathi theatre</span> <span class="badge rounded-pill text-bg-light border">Baking</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Meera%20(SGM-1027)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pAisha" tabindex="-1" aria-labelledby="pAishaT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-aisha/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Aisha">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pAishaT">Aisha Khan, 26</h2>
+        <p class="text-body-secondary">Architect · Hyderabad · Muslim</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">I design homes for a living and am slowly restoring my grandmother's Deccan courtyard house.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">SPA Delhi</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'6&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Non-Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Ashwini</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">5 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-1031</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Hyderabadi family with roots in Bhopal; father a civil engineer, mother runs a boutique; two younger brothers.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Heritage walks</span> <span class="badge rounded-pill text-bg-light border">Urdu poetry</span> <span class="badge rounded-pill text-bg-light border">Sketching</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Aisha%20(SGM-1031)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pDiya" tabindex="-1" aria-labelledby="pDiyaT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-diya/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Diya">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pDiyaT">Diya Mehta, 25</h2>
+        <p class="text-body-secondary">Chartered Accountant · Mumbai · Jain</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">Numbers by day, Kathak by evening. Looking for a partner who values quiet steadiness over noise.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">CA, H.R. College</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'3&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Jain</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Revati</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">14 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-1035</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Vaishnav Jain family from Mumbai; joint family business; one elder sister, married.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Kathak</span> <span class="badge rounded-pill text-bg-light border">Paryushan seva</span> <span class="badge rounded-pill text-bg-light border">Puzzles</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Diya%20(SGM-1035)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pArjun" tabindex="-1" aria-labelledby="pArjunT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-arjun/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Arjun">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pArjunT">Arjun Nair, 29</h2>
+        <p class="text-body-secondary">Software Architect · Bengaluru · Hindu</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">I build systems that scale and sourdough that doesn't always. Weekend cyclist, ambitious but homegrown.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">IIT Bombay</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'10&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Non-Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Vishakha</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">11 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-2044</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Nair family from Palakkad; father a professor, mother a Kathakali artist; only child.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Cycling</span> <span class="badge rounded-pill text-bg-light border">Sourdough</span> <span class="badge rounded-pill text-bg-light border">Carnatic playlists</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Arjun%20(SGM-2044)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pKabir" tabindex="-1" aria-labelledby="pKabirT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-kabir/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Kabir">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pKabirT">Kabir Sharma, 31</h2>
+        <p class="text-body-secondary">Entrepreneur · Delhi NCR · Hindu</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">Second-generation entrepreneur rebuilding our family spice trade for the D2C era.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">SRCC, Delhi</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">6'0&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Punarvasu</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">26 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-2048</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Sharma family from Old Delhi; grandparents at home; two younger brothers in the business.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Cricket</span> <span class="badge rounded-pill text-bg-light border">Food walks</span> <span class="badge rounded-pill text-bg-light border">Fountain pens</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Kabir%20(SGM-2048)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pFarhan" tabindex="-1" aria-labelledby="pFarhanT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-farhan/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Farhan">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pFarhanT">Farhan Ali, 28</h2>
+        <p class="text-body-secondary">Data Scientist · Hyderabad · Muslim</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">I teach machines to read X-rays; I unwind with ghazals and long drives on the Outer Ring Road.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">IIT Kanpur</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">5'9&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Non-Vegetarian</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Dhanishta</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">3 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-2051</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Family from Lucknow; father an oncologist, mother a professor of Urdu; elder sister married.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Ghazals</span> <span class="badge rounded-pill text-bg-light border">Long drives</span> <span class="badge rounded-pill text-bg-light border">Astronomy</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Farhan%20(SGM-2051)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pVikram" tabindex="-1" aria-labelledby="pVikramT" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 overflow-hidden position-relative">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close profile"></button>
+      <img src="https://picsum.photos/seed/sg-vikram/720/360.jpg" width="720" height="360" class="w-100 object-fit-cover" alt="Vikram">
+      <div class="modal-body p-4">
+        <h2 class="h4 fw-semibold" id="pVikramT">Vikram Shah, 32</h2>
+        <p class="text-body-secondary">Textile Exporter · Jaipur · Jain</p>
+        <p class="fst-italic border-start border-3 border-danger ps-3">Third-generation textile exporter; I measure life in loyal friendships and good block prints.</p>
+        <dl class="row row-cols-sm-2 small">
+          <div class="col"><dt class="text-body-secondary fw-normal">Education</dt><dd class="fw-semibold">NMIMS, Mumbai</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Height</dt><dd class="fw-semibold">6'0&quot;</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Diet</dt><dd class="fw-semibold">Jain</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Star</dt><dd class="fw-semibold">Hasta</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">On Sangam</dt><dd class="fw-semibold">52 days</dd></div>
+          <div class="col"><dt class="text-body-secondary fw-normal">Profile ID</dt><dd class="fw-semibold">SGM-2055</dd></div>
+        </dl>
+        <h3 class="h6 text-uppercase text-danger-emphasis">Family</h3>
+        <p class="small text-body-secondary">Shah family of Jaipur; father chairs the export house; two sisters, both married.</p>
+        <p class="mb-3"><span class="badge rounded-pill text-bg-light border">Block prints</span> <span class="badge rounded-pill text-bg-light border">Chess</span> <span class="badge rounded-pill text-bg-light border">Temple architecture</span></p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-danger" href="mailto:interests@sangam.example?subject=Interest%20in%20Vikram%20(SGM-2055)"><i class="bi bi-send"></i> Send interest</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The ONLY script on the page: the external, SRI-verified Bootstrap bundle.
+     All behavior above is driven by data-bs-* attributes — no inline JS exists. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

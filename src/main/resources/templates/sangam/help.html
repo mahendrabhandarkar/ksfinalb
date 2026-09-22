@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Strict CSP, identical on every page — see index.html for the production-header equivalent. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; font-src https://cdn.jsdelivr.net; img-src 'self' data: https://picsum.photos https://*.picsum.photos; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<title>Help centre &amp; contact — Sangam Matrimony</title>
+<meta name="description" content="Answers on verification, privacy, payments and profiles — plus direct contact with the Sangam care team.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="13" cy="16" r="9" fill="none" stroke="%23dc3545" stroke-width="3"/><circle cx="19" cy="16" r="9" fill="none" stroke="%23ffc107" stroke-width="3"/></svg>'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+<a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+<!-- NAVBAR (Help active) -->
+<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom">
+  <div class="container-xl py-1">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><circle cx="13" cy="17" r="9" fill="none" stroke="#dc3545" stroke-width="2.6"/><circle cx="21" cy="17" r="9" fill="none" stroke="#ffc107" stroke-width="2.6"/></svg>
+      <span class="fs-5 fw-semibold">Sangam <span class="small fw-bold text-warning-emphasis">Matrimony</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html">Search matches</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="help.html">Help</a></li>
+      </ul>
+      <div class="d-flex flex-column flex-lg-row gap-2 pb-2 pb-lg-0">
+        <a class="btn btn-outline-danger" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        <a class="btn btn-danger" href="register.html">Register free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="container-xl py-4 py-lg-5">
+  <nav aria-label="breadcrumb"><ol class="breadcrumb small">
+    <li class="breadcrumb-item"><a class="link-danger link-underline-opacity-0" href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Help centre</li>
+  </ol></nav>
+
+  <header class="row g-4 align-items-center mb-5">
+    <div class="col-lg-6">
+      <h1 class="display-6 fw-semibold lh-1">How can we help?</h1>
+      <p class="text-body-secondary mb-0">Answers to the questions families ask us first — or reach a human below.</p>
+    </div>
+    <div class="col-lg-6">
+      <form class="input-group input-group-lg" action="help.html" method="get" role="search">
+        <label class="visually-hidden" for="hSearch">Search help articles</label>
+        <input type="search" class="form-control" id="hSearch" name="q" placeholder="Search help — e.g. 'refund', 'verify'">
+        <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+  </header>
+
+  <!-- TOPIC CARDS -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-5">
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq1"><div class="card-body p-4">
+      <i class="bi bi-rocket-takeoff fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Getting started</h2><p class="small text-body-secondary mb-0">Registering, your first week, what "verified" means. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq2"><div class="card-body p-4">
+      <i class="bi bi-patch-check fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Verification</h2><p class="small text-body-secondary mb-0">ID checks, re-verification, why a profile may pause. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq3"><div class="card-body p-4">
+      <i class="bi bi-shield-lock fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Privacy &amp; safety</h2><p class="small text-body-secondary mb-0">Who sees your photos, reporting, money-scam red flags. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq4"><div class="card-body p-4">
+      <i class="bi bi-credit-card fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Payments &amp; plans</h2><p class="small text-body-secondary mb-0">Upgrades, refunds, pausing memberships. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq5"><div class="card-body p-4">
+      <i class="bi bi-person-lines-fill fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Your profile</h2><p class="small text-body-secondary mb-0">Editing, photos, horoscopes, deactivating. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+    <div class="col"><a class="card h-100 border-0 shadow-sm rounded-4 text-decoration-none link-dark" href="#faq6"><div class="card-body p-4">
+      <i class="bi bi-chat-heart fs-3 text-danger-emphasis"></i><h2 class="h6 fw-semibold mt-3 mb-1">Interests &amp; chat</h2><p class="small text-body-secondary mb-0">How mutual interest works, family-moderated chat. <span class="fw-semibold link-danger">View answers →</span></p>
+    </div></a></div>
+  </div>
+
+  <!-- FAQ ACCORDION -->
+  <h2 class="h4 fw-semibold mb-3">Frequently asked questions</h2>
+  <div class="accordion col-lg-10 mb-5" id="faqAcc">
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqA1" aria-expanded="true">How do I get started on Sangam?</button></h3>
+      <div id="faqA1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Register free in four short steps, our verification desk calls you within 24 hours, and your first matches appear the same evening. Nothing is paid until you choose a plan.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqA2">What does "ID verified" actually involve?</button></h3>
+      <div id="faqA2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Government-ID upload, a live selfie match, and education or employment proof. We re-verify random profiles through the membership and pause anything that can't be re-confirmed.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqA3">Who can see my photos and contact details?</button></h3>
+      <div id="faqA3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Photos are visible to ID-verified members (or hidden entirely, your choice). Contact details stay locked until interest is mutual — for both sides, always. And we never ask for OTPs or transfers; anyone who does should be reported instantly.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqA4">What is the refund policy?</button></h3>
+      <div id="faqA4" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Full refund within 7 days of any paid plan, no questions asked. After that, memberships pause — not expire — whenever you ask.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqA5">Can I edit or hide my profile later?</button></h3>
+      <div id="faqA5" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Yes — everything is editable from your dashboard's Settings tab. You can hide photos entirely, deactivate temporarily, or delete permanently (14-day grace period before purge).</div></div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faq6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqA6">How does chat begin between two members?</button></h3>
+      <div id="faqA6" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body small text-body-secondary">Only after mutual interest. On Heritage plans, conversations can run in family-moderated mode, where an introduction call is arranged by our matchmakers first.</div></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="row g-4">
+    <div class="col-lg-7"><div class="card border-0 shadow-sm rounded-4 h-100"><div class="card-body p-4 p-lg-5">
+      <h2 class="h4 fw-semibold mb-1">Write to the care team</h2>
+      <p class="text-body-secondary small mb-4">A human replies within 4 working hours — usually faster.</p>
+      <form action="help.html" method="get" class="row g-3">
+        <div class="col-md-6"><label class="form-label small fw-semibold" for="cTopic">I need help with</label>
+          <select class="form-select" id="cTopic" name="topic" required><option value="" selected>Choose…</option><option>My account</option><option>Verification</option><option>Payments &amp; refunds</option><option>Report a profile</option><option>Something else</option></select></div>
+        <div class="col-md-6"><label class="form-label small fw-semibold" for="cEmail">Your email</label><input type="email" class="form-control" id="cEmail" name="email" required></div>
+        <div class="col-12"><label class="form-label small fw-semibold" for="cSubject">Subject</label><input type="text" class="form-control" id="cSubject" name="subject" required></div>
+        <div class="col-12"><label class="form-label small fw-semibold" for="cMsg">Message</label><textarea class="form-control" id="cMsg" name="message" rows="5" required></textarea></div>
+        <div class="col-12"><button class="btn btn-danger" type="submit"><i class="bi bi-send"></i> Send message</button></div>
+      </form>
+    </div></div></div>
+
+    <div class="col-lg-5 d-grid gap-4 align-content-start">
+      <div class="card border-0 shadow-sm rounded-4"><ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex gap-3"><i class="bi bi-envelope-fill text-danger"></i><div><b class="small d-block">Email</b><a class="small link-danger" href="mailto:care@sangam.example">care@sangam.example</a></div></li>
+        <li class="list-group-item d-flex gap-3"><i class="bi bi-telephone-fill text-danger"></i><div><b class="small d-block">Toll-free</b><span class="small text-body-secondary">1800-123-4567 · Mon–Sat, 9 AM – 9 PM IST</span></div></li>
+        <li class="list-group-item d-flex gap-3"><i class="bi bi-geo-alt-fill text-danger"></i><div><b class="small d-block">Office</b><span class="small text-body-secondary">3rd Floor, Dadar Heritage House, Mumbai 400014</span></div></li>
+      </ul></div>
+      <div class="alert alert-warning rounded-4 mb-0 small"><i class="bi bi-exclamation-triangle"></i> <b>Emergency?</b> If you feel unsafe or someone asks for money, call the number above and mark it <b>urgent</b> — the trust line answers 24×7.</div>
+      <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#safetyOC"><i class="bi bi-shield-check"></i> Read our full safety promise</button>
+    </div>
+  </section>
+</main>
+
+<!-- SAFETY OFFCANVAS -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="safetyOC" aria-labelledby="safetyT">
+  <div class="offcanvas-header border-bottom">
+    <h2 class="offcanvas-title h5 fw-semibold" id="safetyT"><i class="bi bi-shield-check text-danger"></i> Our safety promise</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex gap-3 border-0 px-0"><i class="bi bi-person-badge fs-4 text-danger-emphasis"></i><span class="small"><b class="d-block">Government-ID verification</b>Every member, every time — before a single photo is visible.</span></li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0"><i class="bi bi-images fs-4 text-danger-emphasis"></i><span class="small"><b class="d-block">Watermarked, human-reviewed photos</b>Nothing automated; every image checked by our desk.</span></li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0"><i class="bi bi-eye-slash fs-4 text-danger-emphasis"></i><span class="small"><b class="d-block">Privacy by default</b>Contact details stay hidden until interest is mutual.</span></li>
+      <li class="list-group-item d-flex gap-3 border-0 px-0"><i class="bi bi-telephone-fill fs-4 text-danger-emphasis"></i><span class="small"><b class="d-block">24×7 report line</b>Flag any profile; a human responds within the hour.</span></li>
+    </ul>
+    <a class="btn btn-danger w-100 mt-4" href="mailto:trust@sangam.example?subject=Safety%20question"><i class="bi bi-envelope-fill"></i> Ask our trust team</a>
+  </div>
+</div>
+
+<!-- FOOTER (same as index.html) -->
+<footer class="text-bg-dark mt-4" data-bs-theme="dark">
+  <div class="container-xl">
+    <div class="row g-4 py-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 text-white mb-2" href="index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><circle cx="13" cy="17" r="9" fill="none" stroke="#ffc107" stroke-width="2.6"/><circle cx="21" cy="17" r="9" fill="none" stroke="#ffffff" stroke-width="2.6"/></svg><span class="fs-5 fw-semibold">Sangam Matrimony</span></a>
+        <p class="small text-body-secondary mb-0">Family-guided matchmaking since 1998 — verified profiles, patient matchmakers, families in the loop.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="small text-uppercase text-warning fw-bold">Explore</h4>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="search.html">Search matches</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="stories.html">Stories</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="membership.html">Membership</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="small text-uppercase text-warning fw-bold">Company</h4>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="about.html">About us</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="help.html">Help centre</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="help.html#contact">Contact</a>
+        <a class="link-light link-underline-opacity-0 d-block py-1 small" href="login.html">Login</a>
+      </div>
+      <div class="col-lg-4">
+        <h4 class="small text-uppercase text-warning fw-bold">The Sunday Rishta</h4>
+        <p class="small text-body-secondary">A couple's story and three profiles worth meeting — every Sunday.</p>
+        <form class="d-flex gap-2" action="index.html" method="get">
+          <label class="visually-hidden" for="nlEmail">Email address</label>
+          <input type="email" class="form-control rounded-pill" id="nlEmail" name="email" placeholder="you@example.com" required>
+          <button class="btn btn-danger rounded-pill px-3" type="submit" aria-label="Subscribe"><i class="bi bi-envelope-paper-heart"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between gap-2 border-top border-secondary-subtle py-3 small text-body-secondary">
+      <span>© 2025 Sangam Matrimony · <a class="link-secondary" href="help.html">Privacy</a> · <a class="link-secondary" href="help.html">Terms</a></span>
+      <span>Made with care in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

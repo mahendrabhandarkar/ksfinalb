@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Strict CSP, identical on every page — see index.html for the production-header equivalent. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; font-src https://cdn.jsdelivr.net; img-src 'self' data: https://picsum.photos https://*.picsum.photos; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<title>Member dashboard — Sangam Matrimony</title>
+<meta name="description" content="Your Sangam dashboard: new matches, interests received and sent, shortlist, and profile settings.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="13" cy="16" r="9" fill="none" stroke="%23dc3545" stroke-width="3"/><circle cx="19" cy="16" r="9" fill="none" stroke="%23ffc107" stroke-width="3"/></svg>'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+<!-- NAVBAR (Dashboard active) -->
+<nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
+  <div class="container-xl py-1">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><circle cx="13" cy="17" r="9" fill="none" stroke="#dc3545" stroke-width="2.6"/><circle cx="21" cy="17" r="9" fill="none" stroke="#ffc107" stroke-width="2.6"/></svg>
+      <span class="fs-5 fw-semibold">Sangam <span class="small fw-bold text-warning-emphasis">Matrimony</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html">Search matches</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+      </ul>
+      <div class="d-flex flex-column flex-lg-row gap-2 pb-2 pb-lg-0">
+        <a class="btn btn-outline-danger" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        <a class="btn btn-danger" href="register.html">Register free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MEMBER BAND -->
+<div class="bg-body border-bottom">
+  <div class="container-xl py-4 d-flex flex-wrap align-items-center gap-3">
+    <img src="https://picsum.photos/seed/sg-sneha/96/96.jpg" width="64" height="64" class="rounded-circle border border-2 border-warning" alt="Sneha Patil">
+    <div class="me-auto">
+      <h1 class="h4 fw-semibold mb-0">Welcome back, Sneha</h1>
+      <p class="small text-body-secondary mb-0">SGM-3051 · Preferred member · renews 12 Mar 2026</p>
+    </div>
+    <div class="d-none d-md-block flex-fill col-lg-3">
+      <div class="d-flex justify-content-between small mb-1"><span>Profile strength</span><b class="text-warning-emphasis">75% — Good</b></div>
+      <div class="progress" role="progressbar" aria-label="Profile strength" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning w-75"></div></div>
+    </div>
+    <a class="btn btn-outline-danger" href="profile.html">View public profile</a>
+    <button class="btn btn-danger" type="button" data-bs-toggle="pill" data-bs-target="#dSettings">Complete profile</button>
+  </div>
+</div>
+
+<main id="main" class="container-xl py-4">
+  <div class="alert alert-warning rounded-4 small mb-4"><i class="bi bi-info-circle"></i> Static demo — in production this dashboard is server-rendered per member with live data.</div>
+
+  <div class="row g-4">
+    <!-- SIDE TABS -->
+    <div class="col-lg-3">
+      <ul class="nav nav-pills flex-row flex-lg-column gap-1 overflow-auto pb-1" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active text-nowrap" data-bs-toggle="pill" data-bs-target="#dOverview" type="button" role="tab" aria-selected="true"><i class="bi bi-house-door"></i> Overview</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link text-nowrap" data-bs-toggle="pill" data-bs-target="#dMatches" type="button" role="tab" aria-selected="false"><i class="bi bi-people"></i> Matches</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link text-nowrap" data-bs-toggle="pill" data-bs-target="#dInterests" type="button" role="tab" aria-selected="false"><i class="bi bi-envelope-heart"></i> Interests <span class="badge rounded-pill text-bg-danger">6</span></button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link text-nowrap" data-bs-toggle="pill" data-bs-target="#dShortlist" type="button" role="tab" aria-selected="false"><i class="bi bi-bookmark-heart"></i> Shortlist <span class="badge rounded-pill text-bg-danger">3</span></button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link text-nowrap" data-bs-toggle="pill" data-bs-target="#dSettings" type="button" role="tab" aria-selected="false"><i class="bi bi-gear"></i> Settings</button></li>
+      </ul>
+    </div>
+
+    <div class="col-lg-9"><div class="tab-content">
+
+      <!-- OVERVIEW -->
+      <div class="tab-pane fade show active" id="dOverview" role="tabpanel">
+        <div class="row row-cols-2 row-cols-lg-4 g-3 mb-4">
+          <div class="col"><div class="card border-0 shadow-sm rounded-4 p-3 text-center"><div class="display-6 fw-semibold text-danger-emphasis">18</div><div class="small text-body-secondary"><i class="bi bi-people"></i> New matches</div></div></div>
+          <div class="col"><div class="card border-0 shadow-sm rounded-4 p-3 text-center"><div class="display-6 fw-semibold text-danger-emphasis">6</div><div class="small text-body-secondary"><i class="bi bi-envelope-heart"></i> Interests received</div></div></div>
+          <div class="col"><div class="card border-0 shadow-sm rounded-4 p-3 text-center"><div class="display-6 fw-semibold text-danger-emphasis">132</div><div class="small text-body-secondary"><i class="bi bi-eye"></i> Profile views</div></div></div>
+          <div class="col"><div class="card border-0 shadow-sm rounded-4 p-3 text-center"><div class="display-6 fw-semibold text-danger-emphasis">3</div><div class="small text-body-secondary"><i class="bi bi-bookmark-heart"></i> Shortlisted</div></div></div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-7"><div class="card border-0 shadow-sm rounded-4 h-100"><div class="card-body">
+            <h2 class="h6 text-uppercase text-body-secondary fw-bold mb-3">Recent activity</h2>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item px-0 d-flex gap-3"><i class="bi bi-envelope-heart-fill text-danger"></i><div><b>Kabir S.</b> accepted your interest <span class="d-block small text-body-secondary">2 hours ago</span></div></li>
+              <li class="list-group-item px-0 d-flex gap-3"><i class="bi bi-person-plus-fill text-danger"></i><div>3 new members from <b>Pune</b> match your filters <span class="d-block small text-body-secondary">Today, 9:14 AM</span></div></li>
+              <li class="list-group-item px-0 d-flex gap-3"><i class="bi bi-patch-check-fill text-danger"></i><div>Your <b>education proof</b> was re-verified — all clear <span class="d-block small text-body-secondary">Yesterday</span></div></li>
+              <li class="list-group-item px-0 d-flex gap-3 border-0"><i class="bi bi-chat-dots-fill text-danger"></i><div><b>Farhan A.</b> replied in family-moderated chat <span class="d-block small text-body-secondary">2 days ago</span></div></li>
+            </ul>
+          </div></div></div>
+          <div class="col-md-5"><div class="card border-0 shadow-sm rounded-4 h-100"><div class="card-body">
+            <h2 class="h6 text-uppercase text-body-secondary fw-bold mb-3">Finish your profile</h2>
+            <ul class="list-unstyled small d-grid gap-2 mb-3">
+              <li><i class="bi bi-check2-circle text-success"></i> Basic details</li>
+              <li><i class="bi bi-check2-circle text-success"></i> Education &amp; career</li>
+              <li><i class="bi bi-circle text-body-tertiary"></i> Add 2 more photos</li>
+              <li><i class="bi bi-circle text-body-tertiary"></i> Upload horoscope</li>
+              <li><i class="bi bi-circle text-body-tertiary"></i> Write partner preferences</li>
+            </ul>
+            <button class="btn btn-outline-danger btn-sm" type="button" data-bs-toggle="pill" data-bs-target="#dSettings">Resume setup <i class="bi bi-arrow-right"></i></button>
+          </div></div></div>
+        </div>
+      </div>
+
+      <!-- MATCHES -->
+      <div class="tab-pane fade" id="dMatches" role="tabpanel">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 fw-semibold mb-0">Your daily matches</h2>
+          <a class="btn btn-outline-danger btn-sm" href="search.html">Refine with advanced search</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="row g-0"><div class="col-4"><img src="https://picsum.photos/seed/sg-kabir/240/300.jpg" width="240" height="300" class="w-100 h-100 object-fit-cover" alt="Kabir Sharma"></div>
+            <div class="col-8"><div class="card-body"><h3 class="h6 mb-1">Kabir, 31 · Delhi NCR</h3><p class="small text-body-secondary mb-2">Entrepreneur · Hindu · 6'0"</p><a class="btn btn-danger btn-sm" href="profile.html">View</a></div></div></div>
+          </div></div>
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="row g-0"><div class="col-4"><img src="https://picsum.photos/seed/sg-farhan/240/300.jpg" width="240" height="300" class="w-100 h-100 object-fit-cover" alt="Farhan Ali"></div>
+            <div class="col-8"><div class="card-body"><h3 class="h6 mb-1">Farhan, 28 · Hyderabad</h3><p class="small text-body-secondary mb-2">Data Scientist · Muslim · 5'9"</p><a class="btn btn-danger btn-sm" href="profile.html">View</a></div></div></div>
+          </div></div>
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="row g-0"><div class="col-4"><img src="https://picsum.photos/seed/sg-arjun/240/300.jpg" width="240" height="300" class="w-100 h-100 object-fit-cover" alt="Arjun Nair"></div>
+            <div class="col-8"><div class="card-body"><h3 class="h6 mb-1">Arjun, 29 · Bengaluru</h3><p class="small text-body-secondary mb-2">Software Architect · Hindu · 5'10"</p><a class="btn btn-danger btn-sm" href="profile.html">View</a></div></div></div>
+          </div></div>
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="row g-0"><div class="col-4"><img src="https://picsum.photos/seed/sg-vikram/240/300.jpg" width="240" height="300" class="w-100 h-100 object-fit-cover" alt="Vikram Shah"></div>
+            <div class="col-8"><div class="card-body"><h3 class="h6 mb-1">Vikram, 32 · Jaipur</h3><p class="small text-body-secondary mb-2">Textile Exporter · Jain · 6'0"</p><a class="btn btn-danger btn-sm" href="profile.html">View</a></div></div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- INTERESTS -->
+      <div class="tab-pane fade" id="dInterests" role="tabpanel">
+        <h2 class="h5 fw-semibold mb-3">Received <span class="badge text-bg-danger">6</span></h2>
+        <div class="table-responsive border rounded-4 bg-white shadow-sm mb-4">
+          <table class="table align-middle mb-0 small">
+            <thead class="table-light"><tr><th>Member</th><th>Details</th><th>Received</th><th class="text-end pe-3">Actions</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="ps-3"><div class="d-flex align-items-center gap-2"><img src="https://picsum.photos/seed/sg-kabir/64/64.jpg" width="36" height="36" class="rounded-circle" alt=""><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Kabir S.</a></div></td>
+                <td>31 · Delhi NCR · Entrepreneur</td><td>2 h ago</td>
+                <td class="text-end pe-3"><a class="btn btn-success btn-sm" href="mailto:interests@sangam.example?subject=Accept%20Kabir%20(SGM-2048)"><i class="bi bi-check2"></i> Accept</a> <a class="btn btn-outline-secondary btn-sm" href="mailto:interests@sangam.example?subject=Decline%20Kabir%20(SGM-2048)">Decline</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3"><div class="d-flex align-items-center gap-2"><img src="https://picsum.photos/seed/sg-farhan/64/64.jpg" width="36" height="36" class="rounded-circle" alt=""><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Farhan A.</a></div></td>
+                <td>28 · Hyderabad · Data Scientist</td><td>Yesterday</td>
+                <td class="text-end pe-3"><a class="btn btn-success btn-sm" href="mailto:interests@sangam.example?subject=Accept%20Farhan%20(SGM-2051)"><i class="bi bi-check2"></i> Accept</a> <a class="btn btn-outline-secondary btn-sm" href="mailto:interests@sangam.example?subject=Decline%20Farhan%20(SGM-2051)">Decline</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3"><div class="d-flex align-items-center gap-2"><img src="https://picsum.photos/seed/sg-rohan/64/64.jpg" width="36" height="36" class="rounded-circle" alt=""><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Rohan D.</a></div></td>
+                <td>27 · Mumbai · Music Producer</td><td>3 days ago</td>
+                <td class="text-end pe-3"><a class="btn btn-success btn-sm" href="mailto:interests@sangam.example?subject=Accept%20Rohan%20(SGM-2060)"><i class="bi bi-check2"></i> Accept</a> <a class="btn btn-outline-secondary btn-sm" href="mailto:interests@sangam.example?subject=Decline%20Rohan%20(SGM-2060)">Decline</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="h5 fw-semibold mb-3">Sent <span class="badge text-bg-secondary">9</span></h2>
+        <div class="table-responsive border rounded-4 bg-white shadow-sm">
+          <table class="table align-middle mb-0 small">
+            <thead class="table-light"><tr><th>Member</th><th>Sent</th><th>Status</th><th class="text-end pe-3">Action</th></tr></thead>
+            <tbody>
+              <tr><td class="ps-3"><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Vikram S.</a> · 32 · Jaipur</td><td>1 week ago</td><td><span class="badge text-bg-warning">Pending</span></td><td class="text-end pe-3"><a class="btn btn-outline-danger btn-sm" href="profile.html">View</a></td></tr>
+              <tr><td class="ps-3"><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Kabir S.</a> · 31 · Delhi NCR</td><td>2 weeks ago</td><td><span class="badge text-bg-success">Accepted</span></td><td class="text-end pe-3"><a class="btn btn-outline-danger btn-sm" href="profile.html">Open chat</a></td></tr>
+              <tr><td class="ps-3"><a class="link-danger link-underline-opacity-0 fw-semibold" href="profile.html">Arjun N.</a> · 29 · Bengaluru</td><td>3 weeks ago</td><td><span class="badge text-bg-secondary">Declined</span></td><td class="text-end pe-3"><a class="btn btn-outline-danger btn-sm" href="search.html">Find similar</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small text-body-secondary mt-2 mb-0"><i class="bi bi-info-circle"></i> In this static demo, Accept/Decline open a pre-filled email; in production they call your API.</p>
+      </div>
+
+      <!-- SHORTLIST -->
+      <div class="tab-pane fade" id="dShortlist" role="tabpanel">
+        <h2 class="h5 fw-semibold mb-3">Your shortlist</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <img src="https://picsum.photos/seed/sg-kabir/480/360.jpg" width="480" height="360" class="card-img-top object-fit-cover" alt="Kabir Sharma" loading="lazy">
+            <div class="card-body"><h3 class="h6 mb-1">Kabir, 31 · Delhi NCR</h3><p class="small text-body-secondary mb-0">Entrepreneur · Hindu</p></div>
+            <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3"><a class="btn btn-danger btn-sm flex-fill" href="profile.html">View</a><a class="btn btn-outline-secondary btn-sm" href="dashboard.html">Remove</a></div>
+          </div></div>
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <img src="https://picsum.photos/seed/sg-farhan/480/360.jpg" width="480" height="360" class="card-img-top object-fit-cover" alt="Farhan Ali" loading="lazy">
+            <div class="card-body"><h3 class="h6 mb-1">Farhan, 28 · Hyderabad</h3><p class="small text-body-secondary mb-0">Data Scientist · Muslim</p></div>
+            <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3"><a class="btn btn-danger btn-sm flex-fill" href="profile.html">View</a><a class="btn btn-outline-secondary btn-sm" href="dashboard.html">Remove</a></div>
+          </div></div>
+          <div class="col"><div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <img src="https://picsum.photos/seed/sg-vikram/480/360.jpg" width="480" height="360" class="card-img-top object-fit-cover" alt="Vikram Shah" loading="lazy">
+            <div class="card-body"><h3 class="h6 mb-1">Vikram, 32 · Jaipur</h3><p class="small text-body-secondary mb-0">Textile Exporter · Jain</p></div>
+            <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3"><a class="btn btn-danger btn-sm flex-fill" href="profile.html">View</a><a class="btn btn-outline-secondary btn-sm" href="dashboard.html">Remove</a></div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-pane fade" id="dSettings" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7"><div class="card border-0 shadow-sm rounded-4 h-100"><div class="card-body p-4">
+            <h2 class="h6 text-uppercase text-body-secondary fw-bold mb-3">Edit profile</h2>
+            <form action="dashboard.html" method="get" class="d-grid gap-3">
+              <div><label class="form-label small fw-semibold" for="sName">Display name</label><input type="text" class="form-control" id="sName" value="Sneha Patil"></div>
+              <div><label class="form-label small fw-semibold" for="sAbout">About you</label><textarea class="form-control" id="sAbout" rows="3">UX designer in Pune; weekends are for badminton and my grandmother's puran poli.</textarea></div>
+              <div class="row g-3">
+                <div class="col-6"><label class="form-label small fw-semibold" for="sHeight">Height</label>
+                  <select class="form-select" id="sHeight"><option>5'2"</option><option selected>5'4"</option><option>5'6"</option></select></div>
+                <div class="col-6"><label class="form-label small fw-semibold" for="sDiet">Diet</label>
+                  <select class="form-select" id="sDiet"><option selected>Vegetarian</option><option>Eggetarian</option><option>Non-Vegetarian</option></select></div>
+              </div>
+              <button class="btn btn-danger" type="submit">Save changes</button>
+            </form>
+          </div></div></div>
+
+          <div class="col-md-5 d-grid gap-4 align-content-start">
+            <div class="card border-0 shadow-sm rounded-4"><div class="card-body p-4">
+              <h2 class="h6 text-uppercase text-body-secondary fw-bold mb-3">Notifications</h2>
+              <form action="dashboard.html" method="get" class="d-grid gap-3">
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="n1" checked><label class="form-check-label small" for="n1">New matches by email</label></div>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="n2" checked><label class="form-check-label small" for="n2">Interest received by SMS</label></div>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="n3"><label class="form-check-label small" for="n3">The Sunday Rishta newsletter</label></div>
+                <button class="btn btn-outline-danger btn-sm" type="submit">Save preferences</button>
+              </form>
+            </div></div>
+
+            <div class="card border-0 shadow-sm rounded-4"><div class="card-body p-4">
+              <h2 class="h6 text-uppercase text-body-secondary fw-bold mb-3">Privacy</h2>
+              <label class="form-label small fw-semibold" for="sVis">Who can see my photos</label>
+              <select class="form-select" id="sVis">
+                <option selected>Verified members only</option><option>Everyone on Sangam</option><option>Nobody (hidden)</option>
+              </select>
+              <p class="small text-body-secondary mt-2 mb-0">Contact details are always hidden until interest is mutual.</p>
+            </div></div>
+
+            <div class="card border-danger-subtle border rounded-4"><div class="card-body p-4">
+              <h2 class="h6 text-uppercase text-danger-emphasis fw-bold mb-3">Danger zone</h2>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-danger btn-sm" href="help.html#contact">Deactivate temporarily</a>
+                <button class="btn btn-danger btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete account permanently</button>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </div>
+</main>
+
+<!-- DELETE CONFIRM MODAL -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteT" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0 pb-0"><h2 class="modal-title h5 fw-semibold text-danger" id="deleteT"><i class="bi bi-exclamation-triangle"></i> Delete account?</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="small text-body-secondary">This removes your profile, photos and conversations permanently after a 14-day grace period. Consider <a class="link-danger" href="help.html#contact">pausing instead</a>.</p>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary flex-fill" type="button" data-bs-dismiss="modal">Keep my account</button>
+          <a class="btn btn-danger flex-fill" href="index.html">Delete forever</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER (same as index.html) -->
+<footer class="text-bg-dark mt-4" data-bs-theme="dark">
+  <div class="container-xl">
+    <div class="d-flex flex-wrap justify-content-between gap-2 py-4 small text-body-secondary">
+      <span>© 2025 Sangam Matrimony · <a class="link-secondary" href="help.html">Privacy</a> · <a class="link-secondary" href="help.html">Terms</a></span>
+      <span>Made with care in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
