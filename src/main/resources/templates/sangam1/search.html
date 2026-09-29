@@ -1,0 +1,148 @@
+<main id="main-content" class="py-4">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page" data-i18n="nav.search">Search Profiles</li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <!-- FILTERS -->
+      <aside class="col-lg-3">
+        <form action="search.html" method="get" class="card card-body bg-body-tertiary" aria-label="Profile search filters">
+          <h2 class="h5 fw-semibold mb-3" data-i18n="sr.filters">Filters</h2>
+
+          <fieldset class="mb-3">
+            <legend class="form-label fs-6 mb-1" data-i18n="search.lookingFor">I'm looking for</legend>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lookingFor" id="fGroom" value="groom" checked>
+              <label class="form-check-label" for="fGroom" data-i18n="look.groom">A groom (male)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lookingFor" id="fBride" value="bride">
+              <label class="form-check-label" for="fBride" data-i18n="look.bride">A bride (female)</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="mb-3">
+            <legend class="form-label fs-6 mb-1">Age</legend>
+            <div class="row g-2">
+              <div class="col-6">
+                <label class="form-label small" for="fAgeFrom" data-i18n="search.ageFrom">Age from</label>
+                <input type="number" class="form-control" id="fAgeFrom" name="age_from" min="18" max="75" value="21">
+              </div>
+              <div class="col-6">
+                <label class="form-label small" for="fAgeTo" data-i18n="search.ageTo">Age to</label>
+                <input type="number" class="form-control" id="fAgeTo" name="age_to" min="18" max="75" value="40">
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="mb-3">
+            <label class="form-label" for="fHeight" data-i18n="sr.height">Height</label>
+            <select class="form-select" id="fHeight" name="height">
+              <option value="" data-i18n="common.any">Any</option>
+              <option>4'8" – 5'2"</option><option>5'2" – 5'6"</option><option>5'6" – 5'10"</option><option>5'10" – 6'4"</option>
+            </select>
+          </div>
+
+          <fieldset class="mb-3">
+            <legend class="form-label fs-6 mb-1" data-i18n="sr.mstatus">Marital status</legend>
+            <div class="form-check"><input class="form-check-input" type="radio" name="mstatus" id="msAny" value="any" checked><label class="form-check-label" for="msAny" data-i18n="common.any">Any</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="mstatus" id="msNever" value="never"><label class="form-check-label" for="msNever" data-i18n="mstatus.never">Never married</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="mstatus" id="msDiv" value="divorced"><label class="form-check-label" for="msDiv" data-i18n="mstatus.divorced">Divorced</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="mstatus" id="msWid" value="widowed"><label class="form-check-label" for="msWid" data-i18n="mstatus.widowed">Widowed</label></div>
+          </fieldset>
+
+          <fieldset class="mb-3">
+            <legend class="form-label fs-6 mb-1" data-i18n="search.religion">Religion</legend>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="religion" id="rHindu" value="hindu"><label class="form-check-label" for="rHindu" data-i18n="religion.hindu">Hindu</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="religion" id="rMuslim" value="muslim"><label class="form-check-label" for="rMuslim" data-i18n="religion.muslim">Muslim</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="religion" id="rChrist" value="christian"><label class="form-check-label" for="rChrist" data-i18n="religion.christian">Christian</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="religion" id="rSikh" value="sikh"><label class="form-check-label" for="rSikh" data-i18n="religion.sikh">Sikh</label></div>
+          </fieldset>
+
+          <div class="mb-3">
+            <label class="form-label" for="fTongue" data-i18n="sr.mtongue">Mother tongue</label>
+            <select class="form-select" id="fTongue" name="tongue">
+              <option value="" data-i18n="common.any">Any</option>
+              <option data-i18n="mt.hindi">Hindi</option><option data-i18n="mt.marathi">Marathi</option>
+              <option data-i18n="mt.english">English</option><option data-i18n="mt.arabic">Arabic</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="fCity" data-i18n="search.city">City</label>
+            <select class="form-select" id="fCity" name="city">
+              <option value="" data-i18n="common.any">Any</option>
+              <option>Mumbai</option><option>Delhi</option><option>Pune</option><option>Nashik</option><option>Nagpur</option><option>Dubai</option>
+            </select>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary"><i class="bi bi-funnel" aria-hidden="true"></i> <span data-i18n="sr.apply">Apply filters</span></button>
+            <button type="reset" class="btn btn-outline-secondary" data-i18n="sr.reset">Reset</button>
+          </div>
+        </form>
+      </aside>
+
+      <!-- RESULTS -->
+      <section class="col-lg-9" aria-label="Search results">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+          <h1 class="h3 fw-bold mb-0" data-i18n="nav.search">Search Profiles</h1>
+          <div class="d-flex align-items-center gap-2">
+            <label class="form-label mb-0 small" for="sortBy" data-i18n="sr.sort">Sort by</label>
+            <select class="form-select form-select-sm" id="sortBy" name="sort" style="width:auto">
+              <option data-i18n="sort.match">Best match</option>
+              <option data-i18n="sort.newest">Newest first</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="text-muted" aria-live="polite" data-i18n="sr.showing">Showing 1–6 of 128 profiles</p>
+
+        <!-- Result card ×6 (repeat pattern) -->
+        <article class="card profile-card mb-3" aria-labelledby="p1-name">
+          <div class="row g-0">
+            <div class="col-4 col-md-3">
+              <img src="https://i.pravatar.cc/300?img=12" class="img-fluid rounded-start h-100" width="300" height="300" loading="lazy" alt="Profile photo of Aarav Sharma, 28, Pune">
+            </div>
+            <div class="col-8 col-md-9">
+              <div class="card-body">
+                <h2 class="h5 mb-2" id="p1-name">Aarav S.
+                  <span class="badge badge-verified"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> <span data-i18n="p.verified">Verified</span></span>
+                </h2>
+                <dl class="row row-cols-2 row-cols-md-3 small text-secondary mb-2">
+                  <div class="col"><dt class="d-inline">Age:</dt> <dd class="d-inline mb-0">28 yrs</dd></div>
+                  <div class="col"><dt class="d-inline">Height:</dt> <dd class="d-inline mb-0">5'9"</dd></div>
+                  <div class="col"><dt class="d-inline">Religion:</dt> <dd class="d-inline mb-0">Hindu</dd></div>
+                  <div class="col"><dt class="d-inline">City:</dt> <dd class="d-inline mb-0">Pune</dd></div>
+                  <div class="col"><dt class="d-inline">Education:</dt> <dd class="d-inline mb-0">B.Tech</dd></div>
+                  <div class="col"><dt class="d-inline">Works as:</dt> <dd class="d-inline mb-0">Software Engineer</dd></div>
+                </dl>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="profile-view.html" class="btn btn-primary btn-sm" data-i18n="p.view">View Profile</a>
+                  <button type="button" class="btn btn-outline-primary btn-sm"><i class="bi bi-heart" aria-hidden="true"></i> <span data-i18n="p.interest">Send Interest</span></button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm" aria-label="Save Aarav S. to shortlist"><i class="bi bi-bookmark" aria-hidden="true"></i> <span data-i18n="p.save">Save</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Repeat 5 more <article> cards with different data … -->
+
+        <nav aria-label="Result pages">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><span class="page-link" data-i18n="sr.prev">Previous</span></li>
+            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+            <li class="page-item"><a class="page-link" href="search.html?page=2" aria-label="Go to page 2">2</a></li>
+            <li class="page-item"><a class="page-link" href="search.html?page=3" aria-label="Go to page 3">3</a></li>
+            <li class="page-item"><a class="page-link" href="search.html?page=2" data-i18n="sr.next">Next</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </div>
+</main>

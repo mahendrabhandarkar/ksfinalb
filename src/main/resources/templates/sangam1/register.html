@@ -1,0 +1,96 @@
+<main id="main-content" class="py-5">
+  <div class="container" style="max-width: 720px">
+    <h1 class="h3 fw-bold mb-1" data-i18n="reg.title">Create your free profile</h1>
+    <p class="text-muted mb-4">2 minutes · 100% privacy controlled · Verified members only</p>
+
+    <!-- Server-side validation renders an accessible error summary here -->
+    <div id="formErrors" class="alert alert-danger d-none" role="alert" tabindex="-1">
+      <h2 class="h6 alert-heading"><i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i> Please fix the errors below</h2>
+      <ul class="mb-0"></ul>
+    </div>
+
+    <form action="/api/register" method="post" novalidate>
+      <fieldset class="card card-body mb-4">
+        <legend class="h6 fw-semibold">Basic details</legend>
+
+        <div class="mb-3">
+          <label class="form-label" for="fullName" data-i18n="reg.name">Full name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name" required aria-required="true">
+        </div>
+
+        <fieldset class="mb-3">
+          <legend class="form-label fs-6" data-i18n="reg.gender">Gender</legend>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gMale" value="male" required>
+            <label class="form-check-label" for="gMale" data-i18n="reg.male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gFemale" value="female">
+            <label class="form-check-label" for="gFemale" data-i18n="reg.female">Female</label>
+          </div>
+        </fieldset>
+
+        <div class="mb-3">
+          <label class="form-label" for="dob" data-i18n="reg.dob">Date of birth</label>
+          <input type="date" class="form-control" id="dob" name="dob" autocomplete="bday" required aria-required="true" aria-describedby="dobHint">
+          <div id="dobHint" class="form-text">As per official records. Used only for age verification.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="card card-body mb-4">
+        <legend class="h6 fw-semibold">Contact &amp; security</legend>
+        <div class="mb-3">
+          <label class="form-label" for="email" data-i18n="reg.email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" autocomplete="email" required aria-required="true">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="phone" data-i18n="reg.phone">Mobile number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{8,15}" required aria-required="true" aria-describedby="phoneHint">
+          <div id="phoneHint" class="form-text">We send a one-time verification code to this number.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="pass" data-i18n="reg.pass">Password</label>
+          <input type="password" class="form-control" id="pass" name="password" autocomplete="new-password" minlength="8" required aria-required="true" aria-describedby="passHint">
+          <div id="passHint" class="form-text">At least 8 characters, including a number and a symbol.</div>
+        </div>
+        <div class="mb-0">
+          <label class="form-label" for="cpass">Confirm password</label>
+          <input type="password" class="form-control" id="cpass" name="confirmPassword" autocomplete="new-password" required aria-required="true">
+        </div>
+      </fieldset>
+
+      <fieldset class="card card-body mb-4">
+        <legend class="h6 fw-semibold">Community</legend>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="religion" data-i18n="search.religion">Religion</label>
+            <select class="form-select" id="religion" name="religion" required>
+              <option value="" data-i18n="search.citySelect">Select</option>
+              <option data-i18n="religion.hindu">Hindu</option><option data-i18n="religion.muslim">Muslim</option>
+              <option data-i18n="religion.christian">Christian</option><option data-i18n="religion.sikh">Sikh</option><option data-i18n="religion.other">Other</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="tongue" data-i18n="sr.mtongue">Mother tongue</label>
+            <select class="form-select" id="tongue" name="tongue" required>
+              <option value="" data-i18n="search.citySelect">Select</option>
+              <option data-i18n="mt.hindi">Hindi</option><option data-i18n="mt.marathi">Marathi</option>
+              <option data-i18n="mt.english">English</option><option data-i18n="mt.arabic">Arabic</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" id="consent" name="consent" required aria-required="true">
+        <label class="form-check-label" for="consent">
+          <span data-i18n="reg.consent">I agree to the Terms of Use and Privacy Policy.</span>
+          (<a href="legal.html#terms">Terms</a> · <a href="legal.html#privacy">Privacy</a>)
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg w-100" data-i18n="reg.submit">Create Profile</button>
+      <p class="text-center mt-3 mb-0"><a href="login.html" data-i18n="reg.login">Already a member? Login</a></p>
+    </form>
+  </div>
+</main>

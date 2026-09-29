@@ -1,0 +1,70 @@
+<main id="main-content" class="py-4">
+  <div class="container">
+    <h1 class="h3 fw-bold mb-4" data-i18n="dash.title">My Dashboard</h1>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="h6 fw-semibold">Welcome back, Aarav 👋</h2>
+        <p class="mb-2 fw-semibold" id="pcLabel" data-i18n="dash.complete">Profile completeness</p>
+        <div class="progress mb-1" role="progressbar" aria-labelledby="pcLabel" aria-describedby="pcDesc"
+             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width:75%"></div>
+        </div>
+        <p id="pcDesc" class="small text-muted mb-0">75% complete — add your horoscope and 3 more photos to reach 100%.</p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-pane"
+                type="button" role="tab" aria-controls="about-pane" aria-selected="true">About me</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="prefs-tab" data-bs-toggle="tab" data-bs-target="#prefs-pane"
+                type="button" role="tab" aria-controls="prefs-pane" aria-selected="false" tabindex="-1">Partner preferences</button>
+      </li>
+    </ul>
+
+    <div class="tab-content border border-top-0 rounded-bottom p-4 bg-white">
+      <div class="tab-pane fade show active" id="about-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+        <dl class="row profile-detail">
+          <dt class="col-sm-3">Name</dt><dd class="col-sm-9">Aarav Sharma</dd>
+          <dt class="col-sm-3">Age &amp; height</dt><dd class="col-sm-9">28 yrs · 5'9"</dd>
+          <dt class="col-sm-3">Education</dt><dd class="col-sm-9">B.Tech (Computer Science), COEP Pune</dd>
+          <dt class="col-sm-3">Career</dt><dd class="col-sm-9">Software Engineer, Pune</dd>
+          <dt class="col-sm-3">Family</dt><dd class="col-sm-9">Father — businessman; Mother — teacher; One younger sister</dd>
+        </dl>
+        <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil" aria-hidden="true"></i> Edit profile</a>
+      </div>
+      <div class="tab-pane fade" id="prefs-pane" role="tabpanel" aria-labelledby="prefs-tab" tabindex="0">
+        <dl class="row profile-detail">
+          <dt class="col-sm-3">Age range</dt><dd class="col-sm-9">24 – 30</dd>
+          <dt class="col-sm-3">Religion</dt><dd class="col-sm-9">Hindu</dd>
+          <dt class="col-sm-3">Mother tongue</dt><dd class="col-sm-9">Marathi / Hindi</dd>
+          <dt class="col-sm-3">Preferred city</dt><dd class="col-sm-9">Pune, Mumbai</dd>
+        </dl>
+        <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil" aria-hidden="true"></i> Edit preferences</a>
+      </div>
+    </div>
+
+    <section class="mt-4" aria-labelledby="int-title">
+      <h2 class="h5 fw-semibold mb-3" id="int-title">New interests</h2>
+      <ul class="list-group">
+        <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span><i class="bi bi-person-heart text-primary" aria-hidden="true"></i> Priya Patil, 26, Pune</span>
+          <span class="d-flex gap-2">
+            <button type="button" class="btn btn-success btn-sm" aria-label="Accept interest from Priya Patil"><i class="bi bi-check-lg" aria-hidden="true"></i> Accept</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" aria-label="Decline interest from Priya Patil"><i class="bi bi-x-lg" aria-hidden="true"></i> Decline</button>
+          </span>
+        </li>
+        <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span><i class="bi bi-person-heart text-primary" aria-hidden="true"></i> Sneha Kulkarni, 27, Nashik</span>
+          <span class="d-flex gap-2">
+            <button type="button" class="btn btn-success btn-sm" aria-label="Accept interest from Sneha Kulkarni"><i class="bi bi-check-lg" aria-hidden="true"></i> Accept</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" aria-label="Decline interest from Sneha Kulkarni"><i class="bi bi-x-lg" aria-hidden="true"></i> Decline</button>
+          </span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>

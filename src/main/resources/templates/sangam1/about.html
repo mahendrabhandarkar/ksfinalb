@@ -1,0 +1,76 @@
+<main id="main-content" class="py-4">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li class="breadcrumb-item"><a href="search.html" data-i18n="nav.search">Search Profiles</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profile details</li>
+      </ol>
+    </nav>
+
+    <article class="card mb-4">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://i.pravatar.cc/400?img=12" class="img-fluid rounded-start h-100" width="400" height="400" alt="Profile photo of Aarav Sharma, 28, Pune">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body p-4">
+            <h1 class="h3 fw-bold mb-1">Aarav Sharma
+              <span class="badge badge-verified"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> <span data-i18n="p.verified">Verified</span></span>
+            </h1>
+            <p class="text-muted mb-3">28 yrs · 5'9" · Hindu · Marathi · Pune, Maharashtra</p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-primary"><i class="bi bi-heart" aria-hidden="true"></i> <span data-i18n="p.interest">Send Interest</span></button>
+              <button type="button" class="btn btn-outline-primary"><i class="bi bi-chat-dots" aria-hidden="true"></i> Chat</button>
+              <button type="button" class="btn btn-outline-danger" aria-label="Report this profile"><i class="bi bi-flag" aria-hidden="true"></i> Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="row g-4">
+      <section class="col-lg-8" aria-label="Profile details">
+        <h2 class="h5 fw-semibold">About Aarav</h2>
+        <dl class="row profile-detail">
+          <dt class="col-sm-3">About me</dt><dd class="col-sm-9">Calm, family-oriented and passionate about trekking and cooking.</dd>
+          <dt class="col-sm-3">Education</dt><dd class="col-sm-9">B.Tech (Computer Science), COEP Pune</dd>
+          <dt class="col-sm-3">Career</dt><dd class="col-sm-9">Software Engineer at a product company, Pune</dd>
+          <dt class="col-sm-3">Family</dt><dd class="col-sm-9">Father — businessman; Mother — school teacher; One younger sister</dd>
+          <dt class="col-sm-3">Religion</dt><dd class="col-sm-9">Hindu, Marathi, Kulkarni</dd>
+          <dt class="col-sm-3">Marital status</dt><dd class="col-sm-9">Never married</dd>
+          <dt class="col-sm-3">Horoscope</dt><dd class="col-sm-9">Available on request</dd>
+        </dl>
+      </section>
+
+      <aside class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+            <i class="bi bi-lock-fill fs-2 text-secondary" aria-hidden="true"></i>
+            <h2 class="h6 fw-semibold mt-2">Contact details</h2>
+            <p class="small text-muted">Phone number, email and horoscope are visible to logged-in members only.</p>
+            <a href="login.html" class="btn btn-primary btn-sm" data-i18n="nav.login">Login</a>
+          </div>
+        </div>
+        <div class="alert alert-warning" role="alert">
+          <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+          <strong>Safety first:</strong> never share bank details, OTPs or make payments to members. Report suspicious profiles immediately.
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-5" aria-labelledby="sim-title">
+      <h2 class="h5 fw-semibold mb-3" id="sim-title">Similar profiles</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card profile-card"><div class="card-body d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/100?img=33" width="100" height="100" class="rounded" loading="lazy" alt="Profile photo of Rohit Jadhav, 29, Pune">
+            <div><h3 class="h6 mb-1">Rohit J., 29</h3><p class="small text-muted mb-2">Pune · Engineer</p>
+            <a href="profile-view.html" class="btn btn-outline-primary btn-sm" data-i18n="p.view">View Profile</a></div>
+          </div></div>
+        </div>
+        <!-- repeat 2 more mini-cards -->
+      </div>
+    </section>
+  </div>
+</main>

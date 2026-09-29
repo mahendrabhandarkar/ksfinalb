@@ -1,0 +1,57 @@
+/* ============================================================
+   Sangam Matrimony — accessibility-first, colour-blind-safe
+   Palette: Blue (primary) + Orange (accent). This blue/orange
+   pair stays distinguishable in protanopia, deuteranopia and
+   tritanopia. Colour is NEVER the only signal — every state
+   also has an icon + text label (WCAG 1.4.1 Use of Colour).
+   ============================================================ */
+:root {
+  --mm-blue:      #0b5ed7;  /* primary actions, AA on white  */
+  --mm-blue-dark: #084298;  /* focus ring, links             */
+  --mm-orange:    #c2410c;  /* premium/highlight, AA on white*/
+  --mm-green:     #0a6e4f;  /* verified/success              */
+  --mm-red:       #a4243b;  /* danger/report                 */
+}
+
+/* Respect user motion preference (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Text resizing controls A− / A / A+ (WCAG 1.4.4) */
+html               { font-size: 16px; }
+html[data-fs="sm"] { font-size: 14px; }
+html[data-fs="lg"] { font-size: 18px; }
+html[data-fs="xl"] { font-size: 20px; }
+
+/* Highly visible keyboard focus (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--mm-blue-dark);
+  outline-offset: 2px;
+  border-radius: .125rem;
+}
+
+.navbar-brand .bi { color: var(--mm-red); }
+.hero { background: linear-gradient(135deg, #eaf2ff 0%, #fdf3ea 100%); }
+
+/* Badges pair icon + text — never colour alone */
+.badge-verified { background-color: var(--mm-green);  color: #fff; }
+.badge-premium  { background-color: var(--mm-orange); color: #fff; }
+
+.profile-card { transition: box-shadow .15s ease-in-out; }
+.profile-card:hover,
+.profile-card:focus-within { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+
+/* Comfortable touch targets (WCAG 2.5.8) */
+.btn-sm { min-height: 2.25rem; min-width: 2.25rem; }
+
+.profile-detail dt { color: #495057; font-weight: 600; }
+
+@media print {
+  .navbar, footer, #fontControls, .btn { display: none !important; }
+}

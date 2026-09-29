@@ -1,0 +1,131 @@
+<main id="main-content" class="py-5">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page" data-i18n="nav.membership">Membership</li>
+      </ol>
+    </nav>
+
+    <h1 class="fw-bold text-center mb-2" data-i18n="plans.title">Membership Plans</h1>
+    <p class="text-center text-muted mb-5">Simple pricing. Cancel anytime. GST included.</p>
+
+    <div class="row g-4 justify-content-center mb-5">
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body p-4">
+            <h2 class="h5 fw-semibold" data-i18n="plan.free">Free</h2>
+            <p class="display-6 fw-bold mb-0">₹0 <span class="fs-6 fw-normal text-muted" data-i18n="plan.month">/month</span></p>
+            <ul class="list-unstyled my-4 small">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Create profile</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Browse &amp; filter</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> 5 contacts / month</li>
+            </ul>
+            <a href="register.html" class="btn btn-outline-primary w-100" data-i18n="plan.cta">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center border-primary border-2 shadow-sm">
+          <div class="card-body p-4">
+            <span class="badge badge-premium mb-2"><i class="bi bi-star-fill" aria-hidden="true"></i> <span data-i18n="plan.popular">Most Popular</span></span>
+            <h2 class="h5 fw-semibold" data-i18n="plan.gold">Gold</h2>
+            <p class="display-6 fw-bold mb-0">₹499 <span class="fs-6 fw-normal text-muted" data-i18n="plan.month">/month</span></p>
+            <ul class="list-unstyled my-4 small">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Everything in Free</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> 50 contacts / month</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Chat &amp; video calls</li>
+            </ul>
+            <a href="register.html" class="btn btn-primary w-100" data-i18n="plan.cta">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body p-4">
+            <h2 class="h5 fw-semibold" data-i18n="plan.platinum">Platinum</h2>
+            <p class="display-6 fw-bold mb-0">₹999 <span class="fs-6 fw-normal text-muted" data-i18n="plan.month">/month</span></p>
+            <ul class="list-unstyled my-4 small">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Everything in Gold</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Unlimited contacts</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i> Priority support</li>
+            </ul>
+            <a href="register.html" class="btn btn-outline-primary w-100" data-i18n="plan.cta">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE (caption + scope headers => W3C / a11y) -->
+    <h2 class="h4 fw-bold mb-3">Compare plans</h2>
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered align-middle bg-white">
+        <caption class="visually-hidden">Feature comparison of Free, Gold and Platinum membership plans</caption>
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col" data-i18n="plan.free">Free</th>
+            <th scope="col" data-i18n="plan.gold">Gold</th>
+            <th scope="col" data-i18n="plan.platinum">Platinum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Monthly contact limits</th><td>5</td><td>50</td><td>Unlimited</td></tr>
+          <tr><th scope="row">Verified matches</th>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td></tr>
+          <tr><th scope="row">Chat &amp; video calls</th>
+            <td><i class="bi bi-dash-circle-fill text-secondary" role="img" aria-label="Not included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td></tr>
+          <tr><th scope="row">Horoscope matching</th>
+            <td><i class="bi bi-dash-circle-fill text-secondary" role="img" aria-label="Not included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td></tr>
+          <tr><th scope="row">Priority support</th>
+            <td><i class="bi bi-dash-circle-fill text-secondary" role="img" aria-label="Not included"></i></td>
+            <td><i class="bi bi-dash-circle-fill text-secondary" role="img" aria-label="Not included"></i></td>
+            <td><i class="bi bi-check-circle-fill text-success" role="img" aria-label="Included"></i></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ (Bootstrap accordion = accessible by default) -->
+    <h2 class="h4 fw-bold mb-3">Frequently asked questions</h2>
+    <div class="accordion" id="faq">
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">Is registration really free?</button>
+        </h3>
+        <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1">
+          <div class="accordion-body">Yes. Creating a profile and browsing matches is free forever. Paid plans add contact and communication features.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How do you verify profiles?</button>
+        </h3>
+        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2">
+          <div class="accordion-body">Mobile OTP verification is mandatory; document verification (ID) adds the “Verified” badge to a profile.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I hide my photos?</button>
+        </h3>
+        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3">
+          <div class="accordion-body">Yes — photo and contact visibility are fully under your control in privacy settings.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What is the refund policy?</button>
+        </h3>
+        <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4">
+          <div class="accordion-body">See our refund policy on the legal page — plans are refundable within 7 days if unused.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

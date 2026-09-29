@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /dashboard.html
+Disallow: /profile-view.html
+Allow: /
+Sitemap: https://www.example.com/sitemap.xml
