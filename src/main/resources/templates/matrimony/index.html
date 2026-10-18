@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vivaah Royal — India's most trusted matrimony service. Find your perfect life partner from lakhs of verified profiles. Free to join, built for everyone with world-class accessibility.">
+  <title>Vivaah Royal Matrimony — Find Your Perfect Life Partner</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-outline-light btn-sm px-3" href="login.html">Log in</a>
+          <a class="btn btn-gold btn-sm px-3" href="register.html">Join Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-img" src="img/hero-couple.png" alt="Smiling Indian bride in maroon and gold lehenga with her groom in an ivory sherwani and red turban" fetchpriority="high">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 text-white">
+          <p class="section-eyebrow mb-3">India's most trusted matrimony</p>
+          <h1 id="hero-title" class="display-4 fw-bold mb-3">Find Your Perfect&nbsp;Match, The Royal Way</h1>
+          <p class="lead mb-4">Lakhs of verified profiles, 30+ smart filters and a warm community that respects your traditions — everything your family expects, everything you want.</p>
+          <div class="hero-trust" role="list" aria-label="Our credentials">
+            <span class="item" role="listitem"><i class="bi bi-patch-check-fill" aria-hidden="true"></i>100% verified profiles</span>
+            <span class="item" role="listitem"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i>Privacy-first design</span>
+            <span class="item" role="listitem"><i class="bi bi-universal-access-circle" aria-hidden="true"></i>Accessible to all</span>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <form class="quick-search p-4" action="search.html" method="get" aria-labelledby="qs-title">
+            <h2 id="qs-title" class="h5 mb-3"><i class="bi bi-search-heart-fill text-gold me-2" aria-hidden="true"></i>Find your special someone</h2>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="qs-gender">I'm looking for <span class="req" aria-hidden="true">*</span></label>
+                <select class="form-select" id="qs-gender" name="gender" required>
+                  <option value="F">A Bride (Female)</option>
+                  <option value="M">A Groom (Male)</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label" for="qs-age-min">Age from</label>
+                <select class="form-select" id="qs-age-min" name="ageMin">
+                  <option>21</option><option>22</option><option>23</option><option>24</option><option selected>25</option><option>28</option><option>30</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label" for="qs-age-max">Age to</label>
+                <select class="form-select" id="qs-age-max" name="ageMax">
+                  <option>25</option><option selected>30</option><option>32</option><option>35</option><option>40</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="qs-religion">Religion</label>
+                <select class="form-select" id="qs-religion" name="religion">
+                  <option value="">Any religion</option>
+                  <option>Hindu</option><option>Muslim</option><option>Christian</option><option>Sikh</option><option>Jain</option><option>Buddhist</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="qs-country">Country</label>
+                <select class="form-select" id="qs-country" name="country">
+                  <option value="">Any country</option>
+                  <option>India</option><option>United Arab Emirates</option><option>United States</option><option>United Kingdom</option><option>Singapore</option><option>Australia</option><option>Canada</option>
+                </select>
+              </div>
+              <div class="col-12 d-grid mt-2">
+                <button type="submit" class="btn btn-royal btn-lg"><i class="bi bi-search me-2" aria-hidden="true"></i>Search Now — Free</button>
+              </div>
+              <p class="form-hint text-center mb-0">Already a member? <a href="login.html">Log in here</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="bg-cream section-pad" aria-labelledby="stats-title">
+    <div class="container">
+      <h2 id="stats-title" class="visually-hidden">Vivaah Royal in numbers</h2>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="stat-tile">
+            <i class="bi bi-people-fill" aria-hidden="true"></i>
+            <div class="stat-value">75 Lakh+</div>
+            <p class="ink-muted mb-0">Registered members</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-tile">
+            <i class="bi bi-heart-fill" aria-hidden="true"></i>
+            <div class="stat-value">9 Lakh+</div>
+            <p class="ink-muted mb-0">Success stories</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-tile">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            <div class="stat-value">650+</div>
+            <p class="ink-muted mb-0">Cities &amp; towns served</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-tile">
+            <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+            <div class="stat-value">100%</div>
+            <p class="ink-muted mb-0">Document-verified elite</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section-pad" aria-labelledby="how-title">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">Simple &amp; Sacred</p>
+        <h2 id="how-title" class="h1">How Vivaah Royal works</h2>
+        <p class="ink-muted mx-auto" style="max-width: 560px;">Three royal steps between you and the beginning of forever. No hidden charges, no endless forms — just a journey your family will approve of.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3 class="h5">Create your profile</h3>
+            <p class="ink-muted mb-0">Tell your story in minutes — basic details, community, education and what you seek in a partner. Add photos when you're ready.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3 class="h5">Discover matches</h3>
+            <p class="ink-muted mb-0">Our engine suggests daily matches from 30+ preferences. Filter by community, city, profession — and shortlist the ones who make your heart pause.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3 class="h5">Connect &amp; celebrate</h3>
+            <p class="ink-muted mb-0">Send an interest, chat securely, involve the families and take the shubh step. Our advisors are with you at every celebration.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="register.html" class="btn btn-royal btn-lg px-4">Start Free Registration <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROFILES ============ -->
+  <section class="bg-cream section-pad" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+        <div>
+          <p class="section-eyebrow">Fresh Arrivals</p>
+          <h2 id="featured-title" class="h1 mb-1">Today's featured matches</h2>
+          <p class="ink-muted mb-0">Hand-picked verified profiles refreshed every morning.</p>
+        </div>
+        <a href="matches.html" class="btn btn-outline-royal">View all matches <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+      </div>
+      <div class="row g-4" id="featured-grid" data-grid="grid">
+        <div class="col-12 text-center py-5" aria-live="polite">
+          <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading profiles…</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section class="section-pad" aria-labelledby="why-title">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">The Royal Promise</p>
+        <h2 id="why-title" class="h1">Why families choose us</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="step-card">
+            <i class="bi bi-patch-check-fill text-gold fs-2" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Verified authenticity</h3>
+            <p class="ink-muted mb-0">Every elite profile carries a blue tick after mobile and government-ID checks by our trust team. No surprises, only genuine intent.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="step-card">
+            <i class="bi bi-shield-lock-fill text-gold fs-2" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Privacy that respects you</h3>
+            <p class="ink-muted mb-0">Protected photos, hidden contact details and full control over who sees what. Your dignity is non-negotiable here.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="step-card">
+            <i class="bi bi-universal-access-circle text-gold fs-2" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Accessible to everyone</h3>
+            <p class="ink-muted mb-0">Screen-reader friendly, keyboard navigable, WCAG 2.1 AA contrast, text-resize and high-contrast modes built right in.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="step-card">
+            <i class="bi bi-people-fill text-gold fs-2" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Family-first features</h3>
+            <p class="ink-muted mb-0">Parent-managed profiles, horoscope matching, community filters and family-approved introductions — tradition, tech-enabled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUCCESS STORIES ============ -->
+  <section class="bg-royal section-pad" aria-labelledby="stories-title">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">Shubh Vivah</p>
+        <h2 id="stories-title" class="h1 text-white">Real couples, real blessings</h2>
+      </div>
+      <div id="story-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000" aria-roledescription="carousel" aria-label="Success stories">
+        <div class="carousel-inner" id="story-inner" aria-live="polite"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#story-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous story</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#story-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next story</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEMBERSHIP TEASER ============ -->
+  <section class="section-pad" aria-labelledby="plans-title">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <p class="section-eyebrow">Membership</p>
+          <h2 id="plans-title" class="h1 mb-3">Choose a plan as grand as your intentions</h2>
+          <p class="ink-muted">From our free-forever Freedom plan to the Platinum experience with a dedicated relationship advisor — every plan is crafted to bring you closer to 'the one'. Upgrades are instant; happiness, guaranteed.</p>
+          <ul class="info-list my-4">
+            <li><span class="k"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>Secure payments</span><span class="v">UPI · Cards · Net banking</span></li>
+            <li><span class="k"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>Cancel anytime</span><span class="v">No lock-in, no questions</span></li>
+            <li><span class="k"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>30-day match promise</span><span class="v">Refund if no genuine matches</span></li>
+          </ul>
+          <a href="membership.html" class="btn btn-gold btn-lg">Compare all plans <i class="bi bi-gem ms-1" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3" id="plan-mini-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACCESSIBILITY BAND ============ -->
+  <section class="pattern-paisley section-pad border-top border-gold" aria-labelledby="a11y-title">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4 text-center">
+          <i class="bi bi-universal-access" style="font-size: 4.5rem; color: var(--royal-maroon);" aria-hidden="true"></i>
+        </div>
+        <div class="col-lg-8">
+          <h2 id="a11y-title" class="h2">A wedding invitation meant for everyone</h2>
+          <p class="ink-muted mb-3">Vivaah Royal is built to WCAG 2.1 AA so that every aunt, uncle, grandparent and grandchild can take part — including members who use screen readers, keyboards only, or need larger text.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge badge-royal p-2">Screen-reader tested</span>
+            <span class="badge badge-royal p-2">Full keyboard navigation</span>
+            <span class="badge badge-royal p-2">High-contrast mode</span>
+            <span class="badge badge-royal p-2">Text resizing A&#8722; / A / A+</span>
+            <span class="badge badge-royal p-2">Reduced-motion friendly</span>
+            <a href="help.html#a11y-statement" class="btn btn-outline-royal btn-sm p-2">Read our accessibility statement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-royal section-pad text-center" aria-labelledby="cta-title">
+    <div class="container">
+      <p class="section-eyebrow justify-content-center">Shubh Muhurat Awaits</p>
+      <h2 id="cta-title" class="display-5 mb-3">Your forever begins with one free profile</h2>
+      <p class="lead mb-4" style="color: var(--royal-gold-pale);">Join 75 lakh+ members. No credit card, no drama — just destiny, curated.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="register.html" class="btn btn-gold btn-lg px-4">Register Free Now</a>
+        <a href="search.html" class="btn btn-outline-light btn-lg px-4">Browse profiles first</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer pt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="index.html" aria-label="Vivaah Royal — home">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span class="text-white">Vivaah<span class="brand-gold">Royal</span></span>
+        </a>
+        <p style="max-width: 40ch;">Where eternal bonds begin. India's most trusted matrimony, crafted with royal care and accessible to every heart.</p>
+        <div class="d-flex gap-2 mt-3" role="list" aria-label="Follow us on social media">
+          <a class="social-btn" href="#" role="listitem" aria-label="Vivaah Royal on Facebook (demo link)"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a class="social-btn" href="#" role="listitem" aria-label="Vivaah Royal on Instagram (demo link)"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a class="social-btn" href="#" role="listitem" aria-label="Vivaah Royal on YouTube (demo link)"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          <a class="social-btn" href="#" role="listitem" aria-label="Vivaah Royal on WhatsApp (demo link)"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Explore</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="search.html">Search profiles</a></li>
+          <li><a href="matches.html">Daily matches</a></li>
+          <li><a href="membership.html">Membership plans</a></li>
+          <li><a href="dashboard.html">Member dashboard</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Company</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="help.html">Help centre</a></li>
+          <li><a href="contact.html#feedback">Share feedback</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h3 class="mb-3">Talk to us</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-telephone-fill text-gold me-2" aria-hidden="true"></i><a href="tel:+911800123456">1800-123-456 (toll free, 9am–9pm)</a></li>
+          <li><i class="bi bi-envelope-fill text-gold me-2" aria-hidden="true"></i><a href="mailto:care@vivaahroyal.example">care@vivaahroyal.example</a></li>
+          <li><i class="bi bi-geo-alt-fill text-gold me-2" aria-hidden="true"></i>Royal Heights, Bandra Kurla, Mumbai 400051</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal py-3 d-flex flex-wrap justify-content-between gap-2 small">
+      <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony. Crafted with <i class="bi bi-heart-fill text-gold" role="img" aria-label="love"></i> in India.</span>
+      <span>
+        <a href="#" class="me-3">Privacy policy</a>
+        <a href="#" class="me-3">Terms of use</a>
+        <a href="help.html#a11y-statement">Accessibility statement</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

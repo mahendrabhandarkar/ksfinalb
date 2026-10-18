@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create your free Vivaah Royal matrimony profile in four simple steps. Verified community, privacy-first and fully accessible.">
+  <title>Free Registration — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-outline-light btn-sm px-3" href="login.html">Log in</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="pattern-paisley py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-xl-8">
+        <div class="text-center mb-4">
+          <p class="section-eyebrow justify-content-center">Shubh Aarambh</p>
+          <h1 class="h2 mb-2">Create your free profile</h1>
+          <p class="ink-muted mb-0">Four small steps. One giant leap towards forever.</p>
+        </div>
+
+        <div class="card shadow-soft gold-top">
+          <div class="card-body p-4 p-md-5">
+            <!-- Step indicator -->
+            <ol class="wizard-steps list-unstyled" aria-label="Registration progress">
+              <li class="wstep" id="wstep-1" aria-current="step"><span class="dot" aria-hidden="true">1</span><span>Basics</span></li>
+              <li class="wstep" id="wstep-2"><span class="dot" aria-hidden="true">2</span><span>Community</span></li>
+              <li class="wstep" id="wstep-3"><span class="dot" aria-hidden="true">3</span><span>Career</span></li>
+              <li class="wstep" id="wstep-4"><span class="dot" aria-hidden="true">4</span><span>Contact</span></li>
+            </ol>
+
+            <div aria-live="assertive" id="form-alert-slot"></div>
+
+            <form id="reg-form" novalidate>
+              <!-- STEP 1 : BASICS -->
+              <fieldset class="reg-step" data-step="1" aria-labelledby="legend-1">
+                <legend id="legend-1" class="h5 mb-4"><i class="bi bi-person-heart text-gold me-2" aria-hidden="true"></i>Profile for</legend>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label d-block mb-2">This profile is for <span class="req" aria-hidden="true">*</span></label>
+                    <div class="d-flex flex-wrap gap-3" role="radiogroup" aria-label="Profile created for">
+                      <div class="form-check"><input class="form-check-input" type="radio" name="profileFor" id="pf-self" value="Self" checked><label class="form-check-label" for="pf-self">Myself</label></div>
+                      <div class="form-check"><input class="form-check-input" type="radio" name="profileFor" id="pf-son" value="Son"><label class="form-check-label" for="pf-son">Son</label></div>
+                      <div class="form-check"><input class="form-check-input" type="radio" name="profileFor" id="pf-daughter" value="Daughter"><label class="form-check-label" for="pf-daughter">Daughter</label></div>
+                      <div class="form-check"><input class="form-check-input" type="radio" name="profileFor" id="pf-relative" value="Relative"><label class="form-check-label" for="pf-relative">Relative</label></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-gender">Gender of bride / groom <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-gender" name="gender" aria-describedby="err-gender" required>
+                      <option value="">Select gender</option>
+                      <option value="F">Female — Looking for a groom</option>
+                      <option value="M">Male — Looking for a bride</option>
+                    </select>
+                    <p class="field-error" id="err-gender">Please select the gender for this profile.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-fname">First name <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="reg-fname" name="firstName" autocomplete="given-name" aria-describedby="err-fname hint-fname" required>
+                    <p class="form-hint mb-0" id="hint-fname">As it should appear on the profile.</p>
+                    <p class="field-error" id="err-fname">Please enter a first name (letters only).</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-lname">Last name <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="reg-lname" name="lastName" autocomplete="family-name" aria-describedby="err-lname" required>
+                    <p class="field-error" id="err-lname">Please enter a last name (letters only).</p>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="reg-dob-day">Date of birth <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-dob-day" name="dobDay" aria-describedby="err-dob" required><option value="">Day</option></select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label d-none d-md-block" for="reg-dob-month">&nbsp;</label>
+                    <select class="form-select" id="reg-dob-month" name="dobMonth" aria-describedby="err-dob" required><option value="">Month</option></select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label d-none d-md-block" for="reg-dob-year">&nbsp;</label>
+                    <select class="form-select" id="reg-dob-year" name="dobYear" aria-describedby="err-dob" required><option value="">Year</option></select>
+                    <p class="field-error" id="err-dob">Please provide a valid date of birth (age 21–60).</p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 2 : COMMUNITY -->
+              <fieldset class="reg-step d-none" data-step="2" aria-labelledby="legend-2">
+                <legend id="legend-2" class="h5 mb-4"><i class="bi bi-images text-gold me-2" aria-hidden="true"></i>Religion &amp; community</legend>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-religion">Religion <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-religion" name="religion" aria-describedby="err-religion" required>
+                      <option value="">Select religion</option>
+                      <option>Hindu</option><option>Muslim</option><option>Christian</option><option>Sikh</option><option>Jain</option><option>Buddhist</option>
+                    </select>
+                    <p class="field-error" id="err-religion">Please select a religion.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-community">Community / Caste <span class="req" aria-hidden="true">*</span></label>
+                    <input class="form-control" list="community-list" id="reg-community" name="community" aria-describedby="err-community" required>
+                    <datalist id="community-list">
+                      <option>Brahmin</option><option>Kshatriya</option><option>Agarwal</option><option>Khatri</option><option>Iyer</option><option>Nair</option><option>Reddy</option><option>Patel</option><option>Sindhi</option><option>Kayastha</option><option>Jat</option><option>Bunt</option>
+                    </datalist>
+                    <p class="field-error" id="err-community">Please enter your community.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-tongue">Mother tongue <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-tongue" name="tongue" aria-describedby="err-tongue" required>
+                      <option value="">Select mother tongue</option>
+                      <option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Tamil</option><option>Telugu</option><option>Kannada</option><option>Malayalam</option><option>Punjabi</option><option>Bengali</option><option>Konkani</option><option>Sindhi</option>
+                    </select>
+                    <p class="field-error" id="err-tongue">Please select a mother tongue.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-marital">Marital status <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-marital" name="marital" aria-describedby="err-marital" required>
+                      <option value="">Select status</option>
+                      <option>Never Married</option><option>Divorced</option><option>Widowed</option><option>Awaiting Divorce</option>
+                    </select>
+                    <p class="field-error" id="err-marital">Please select marital status.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-height">Height <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-height" name="height" aria-describedby="err-height" required>
+                      <option value="">Select height</option>
+                      <option>4 ft 8 in</option><option>4 ft 10 in</option><option>5 ft 0 in</option><option>5 ft 2 in</option><option>5 ft 3 in</option><option>5 ft 4 in</option><option>5 ft 5 in</option><option>5 ft 6 in</option><option>5 ft 7 in</option><option>5 ft 8 in</option><option>5 ft 9 in</option><option>5 ft 10 in</option><option>5 ft 11 in</option><option>6 ft 0 in</option><option>6 ft 1 in</option><option>6 ft 2 in</option>
+                    </select>
+                    <p class="field-error" id="err-height">Please select height.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-diet">Diet <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-diet" name="diet" aria-describedby="err-diet" required>
+                      <option value="">Select diet</option>
+                      <option>Vegetarian</option><option>Non-Vegetarian</option><option>Eggetarian</option><option>Jain Food</option>
+                    </select>
+                    <p class="field-error" id="err-diet">Please select diet preference.</p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 3 : CAREER -->
+              <fieldset class="reg-step d-none" data-step="3" aria-labelledby="legend-3">
+                <legend id="legend-3" class="h5 mb-4"><i class="bi bi-mortarboard-fill text-gold me-2" aria-hidden="true"></i>Education &amp; career</legend>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-edu">Highest education <span class="req" aria-hidden="true">*</span></label>
+                    <input class="form-control" list="edu-list" id="reg-edu" name="edu" aria-describedby="err-edu" required>
+                    <datalist id="edu-list"><option>B.Tech</option><option>M.Tech</option><option>MBBS</option><option>MD</option><option>MBA</option><option>CA</option><option>M.Com</option><option>B.Arch</option><option>Ph.D</option><option>LLB</option><option>M.Sc</option><option>B.Des</option></datalist>
+                    <p class="field-error" id="err-edu">Please enter highest education.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-college">College / University</label>
+                    <input type="text" class="form-control" id="reg-college" name="college" placeholder="e.g. Delhi University">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-job">Profession / Occupation <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="reg-job" name="job" placeholder="e.g. Software Engineer at Infosys" aria-describedby="err-job" required>
+                    <p class="field-error" id="err-job">Please describe the profession.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-income">Annual income</label>
+                    <select class="form-select" id="reg-income" name="income">
+                      <option value="">Prefer not to say</option>
+                      <option>Below ₹ 5 Lakh</option><option>₹ 5 - 10 Lakh</option><option>₹ 10 - 20 Lakh</option><option>₹ 20 - 35 Lakh</option><option>₹ 35 - 50 Lakh</option><option>Above ₹ 50 Lakh</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-country">Country of residence <span class="req" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="reg-country" name="country" aria-describedby="err-country" required>
+                      <option value="">Select country</option>
+                      <option>India</option><option>United Arab Emirates</option><option>United States</option><option>United Kingdom</option><option>Singapore</option><option>Australia</option><option>Canada</option>
+                    </select>
+                    <p class="field-error" id="err-country">Please select country.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-city">City <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="reg-city" name="city" placeholder="e.g. Mumbai" aria-describedby="err-city" required>
+                    <p class="field-error" id="err-city">Please enter your city.</p>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="reg-about">About yourself <span class="form-hint">(min 30 characters)</span></label>
+                    <textarea class="form-control" id="reg-about" name="about" rows="4" placeholder="Share hobbies, values and what you seek in a partner…" aria-describedby="err-about count-about"></textarea>
+                    <p class="form-hint mb-0" id="count-about" aria-live="polite">0 / 30 characters minimum</p>
+                    <p class="field-error" id="err-about">Please write at least 30 characters about yourself.</p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 4 : CONTACT -->
+              <fieldset class="reg-step d-none" data-step="4" aria-labelledby="legend-4">
+                <legend id="legend-4" class="h5 mb-4"><i class="bi bi-lock-fill text-gold me-2" aria-hidden="true"></i>Login &amp; contact details</legend>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-email">Email address <span class="req" aria-hidden="true">*</span></label>
+                    <input type="email" class="form-control" id="reg-email" name="email" autocomplete="email" aria-describedby="err-email" required>
+                    <p class="field-error" id="err-email">Please enter a valid email address.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="mobile-cc">+91</span>
+                      <input type="tel" class="form-control" id="reg-mobile" name="mobile" inputmode="numeric" autocomplete="tel" aria-describedby="err-mobile" required>
+                    </div>
+                    <p class="field-error" id="err-mobile">Please enter a valid 10-digit mobile number.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-pw">Password <span class="req" aria-hidden="true">*</span></label>
+                    <input type="password" class="form-control" id="reg-pw" name="password" autocomplete="new-password" aria-describedby="pw-hint pw-meter pw-err" required>
+                    <div class="pw-meter mt-2" id="pw-meter" aria-hidden="true"><div class="bar" id="pw-bar"></div></div>
+                    <p class="form-hint mb-0" id="pw-hint">Min 8 characters with upper, lower, number &amp; special character.</p>
+                    <p class="visually-hidden" id="pw-err" aria-live="polite"></p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reg-pw2">Confirm password <span class="req" aria-hidden="true">*</span></label>
+                    <input type="password" class="form-control" id="reg-pw2" name="password2" autocomplete="new-password" aria-describedby="err-pw2" required>
+                    <p class="field-error" id="err-pw2">Passwords do not match.</p>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="reg-terms" aria-describedby="err-terms" required>
+                      <label class="form-check-label" for="reg-terms">I agree to the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a> and confirm I am 21+ years of age. <span class="req" aria-hidden="true">*</span></label>
+                    </div>
+                    <p class="field-error" id="err-terms">You must accept the terms to continue.</p>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="reg-updates" checked>
+                      <label class="form-check-label" for="reg-updates">Send me new matches &amp; festive offers on WhatsApp.</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Wizard controls -->
+              <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                <button type="button" class="btn btn-outline-royal" id="btn-prev" disabled><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back</button>
+                <button type="button" class="btn btn-royal px-4" id="btn-next">Continue <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                <button type="submit" class="btn btn-gold px-4 d-none" id="btn-submit"><i class="bi bi-stars me-1" aria-hidden="true"></i>Create my profile</button>
+              </div>
+            </form>
+
+            <!-- SUCCESS PANEL -->
+            <div class="text-center d-none py-4" id="reg-success" tabindex="-1">
+              <i class="bi bi-patch-check-fill text-success" style="font-size: 4rem;" aria-hidden="true"></i>
+              <h2 class="h3 mt-3">Badhai ho! Your profile is live 🎉</h2>
+              <p class="ink-muted mx-auto" style="max-width: 46ch;">Welcome to the Vivaah Royal family, <span id="success-name" class="fw-bold"></span>. Your profile has been created and our matchmakers are already at work.</p>
+              <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                <a class="btn btn-royal px-4" href="dashboard.html">Go to my dashboard</a>
+                <a class="btn btn-outline-royal px-4" href="matches.html">See today's matches</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center ink-muted mt-4">Already a member? <a href="login.html" class="fw-bold">Log in here</a></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-2 small">
+    <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony</span>
+    <span><a href="help.html#a11y-statement" class="me-3">Accessibility statement</a><a href="contact.html">Contact support</a></span>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

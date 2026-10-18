@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage received and sent interests, accepted matches and chat with your Vivaah Royal matches.">
+  <title>Inbox — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="inbox.html" aria-current="page">Inbox</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-gold btn-sm px-3" href="membership.html">Upgrade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="py-4">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="mb-2">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Inbox</li>
+      </ol>
+    </nav>
+
+    <h1 class="h3 mb-1">Your inbox</h1>
+    <p class="ink-muted mb-4">Every ‘shubharambh’ starts with a hello. Manage your interests and conversations here.</p>
+
+    <ul class="nav nav-tabs-royal mb-4" role="tablist" aria-label="Inbox sections">
+      <li class="nav-item" role="presentation"><button class="nav-link active" id="tab-in" data-bs-toggle="tab" data-bs-target="#pane-in" type="button" role="tab" aria-controls="pane-in" aria-selected="true"><i class="bi bi-inbox-fill me-1" aria-hidden="true"></i>Received <span class="badge badge-royal ms-1">3</span></button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" id="tab-sent" data-bs-toggle="tab" data-bs-target="#pane-sent" type="button" role="tab" aria-controls="pane-sent" aria-selected="false" tabindex="-1"><i class="bi bi-send-fill me-1" aria-hidden="true"></i>Sent</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" id="tab-acc" data-bs-toggle="tab" data-bs-target="#pane-acc" type="button" role="tab" aria-controls="pane-acc" aria-selected="false" tabindex="-1"><i class="bi bi-hearts me-1" aria-hidden="true"></i>Accepted</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" id="tab-chat" data-bs-toggle="tab" data-bs-target="#pane-chat" type="button" role="tab" aria-controls="pane-chat" aria-selected="false" tabindex="-1"><i class="bi bi-chat-heart-fill me-1" aria-hidden="true"></i>Messages</button></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Received -->
+      <div class="tab-pane fade show active" id="pane-in" role="tabpanel" aria-labelledby="tab-in" tabindex="0" aria-live="polite">
+        <div id="received-list"></div>
+      </div>
+
+      <!-- Sent -->
+      <div class="tab-pane fade" id="pane-sent" role="tabpanel" aria-labelledby="tab-sent" tabindex="0" aria-live="polite">
+        <p class="ink-muted">Interests you have expressed. Members are notified instantly.</p>
+        <div id="sent-list"></div>
+      </div>
+
+      <!-- Accepted -->
+      <div class="tab-pane fade" id="pane-acc" role="tabpanel" aria-labelledby="tab-acc" tabindex="0">
+        <div class="row g-4" id="accepted-grid"></div>
+      </div>
+
+      <!-- Messages -->
+      <div class="tab-pane fade" id="pane-chat" role="tabpanel" aria-labelledby="tab-chat" tabindex="0">
+        <div class="row g-4">
+          <!-- conversation list -->
+          <div class="col-md-4">
+            <div class="card shadow-soft" role="list" aria-label="Conversations">
+              <div class="card-header bg-white"><h2 class="h6 mb-0">Chats</h2></div>
+              <div class="card-body p-2" id="chat-list"></div>
+            </div>
+          </div>
+          <!-- thread -->
+          <div class="col-md-8">
+            <div class="card shadow-soft">
+              <div class="card-header bg-white d-flex align-items-center gap-2">
+                <span class="mini-avatar" id="chat-peer-avatar" aria-hidden="true"></span>
+                <div>
+                  <h2 class="h6 mb-0" id="chat-peer-name">Select a conversation</h2>
+                  <p class="ink-muted small mb-0" id="chat-peer-status"></p>
+                </div>
+              </div>
+              <div class="card-body" style="height: 380px; overflow-y: auto;" id="chat-thread" aria-live="polite" aria-label="Message thread"></div>
+              <div class="card-footer bg-white">
+                <form class="d-flex gap-2" id="chat-form">
+                  <label class="visually-hidden" for="chat-input">Type your message</label>
+                  <input class="form-control" id="chat-input" type="text" placeholder="Type your message…" autocomplete="off" disabled>
+                  <button class="btn btn-royal" type="submit" disabled aria-label="Send message"><i class="bi bi-send-fill" aria-hidden="true"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-2 small">
+    <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony</span>
+    <span><a href="help.html#a11y-statement" class="me-3">Accessibility statement</a><a href="contact.html">Contact support</a></span>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/inbox.js"></script>
+</body>
+</html>

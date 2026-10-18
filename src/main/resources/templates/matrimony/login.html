@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Log in to Vivaah Royal Matrimony to view your matches, interests and messages.">
+  <title>Log In — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <a class="btn btn-gold btn-sm px-3" href="register.html">Join Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="pattern-paisley py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="text-center mb-4">
+          <p class="section-eyebrow justify-content-center">Welcome Back</p>
+          <h1 class="h2 mb-1">Log in to Vivaah Royal</h1>
+          <p class="ink-muted">Your matches have missed you.</p>
+        </div>
+
+        <div class="card shadow-soft gold-top">
+          <div class="card-body p-4 p-md-5">
+            <ul class="nav nav-tabs-royal nav-tabs mb-4" role="tablist" aria-label="Choose login method">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-pw" data-bs-toggle="tab" data-bs-target="#pane-pw" type="button" role="tab" aria-controls="pane-pw" aria-selected="true"><i class="bi bi-key-fill me-1" aria-hidden="true"></i>Password</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-otp" data-bs-toggle="tab" data-bs-target="#pane-otp" type="button" role="tab" aria-controls="pane-otp" aria-selected="false" tabindex="-1"><i class="bi bi-phone-fill me-1" aria-hidden="true"></i>OTP</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" aria-live="polite">
+              <!-- Password login -->
+              <div class="tab-pane fade show active" id="pane-pw" role="tabpanel" aria-labelledby="tab-pw" tabindex="0">
+                <form id="login-pw-form" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label" for="login-id">Email or mobile number <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="login-id" name="loginId" autocomplete="username" aria-describedby="err-login-id" required>
+                    <p class="field-error" id="err-login-id">Please enter your registered email or 10-digit mobile number.</p>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label" for="login-pw">Password <span class="req" aria-hidden="true">*</span></label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="login-pw" name="password" autocomplete="current-password" aria-describedby="err-login-pw" required>
+                      <button class="btn btn-outline-royal" type="button" id="toggle-pw" aria-label="Show password as plain text. Note: your password will be visible on screen." aria-pressed="false"><i class="bi bi-eye-fill" aria-hidden="true"></i></button>
+                    </div>
+                    <p class="field-error" id="err-login-pw">Please enter your password.</p>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="remember-me">
+                      <label class="form-check-label" for="remember-me">Keep me logged in</label>
+                    </div>
+                    <a href="#" class="btn-link-royal small" id="forgot-link">Forgot password?</a>
+                  </div>
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-royal btn-lg"><i class="bi bi-box-arrow-in-right me-2" aria-hidden="true"></i>Log In Securely</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- OTP login -->
+              <div class="tab-pane fade" id="pane-otp" role="tabpanel" aria-labelledby="tab-otp" tabindex="0">
+                <form id="login-otp-form" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label" for="otp-mobile">Registered mobile number <span class="req" aria-hidden="true">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="otp-cc">+91</span>
+                      <input type="tel" class="form-control" id="otp-mobile" inputmode="numeric" autocomplete="tel" aria-describedby="err-otp-mobile" required>
+                    </div>
+                    <p class="field-error" id="err-otp-mobile">Please enter a valid 10-digit mobile number.</p>
+                  </div>
+                  <div class="d-grid mb-3">
+                    <button type="button" class="btn btn-outline-royal" id="send-otp"><i class="bi bi-shield-lock me-2" aria-hidden="true"></i>Send OTP</button>
+                  </div>
+                  <div id="otp-field-wrap" class="mb-3 d-none">
+                    <label class="form-label" for="otp-code">Enter the 4-digit OTP <span class="req" aria-hidden="true">*</span></label>
+                    <input class="form-control" id="otp-code" inputmode="numeric" maxlength="4" placeholder="••••" aria-describedby="err-otp-code otp-hint" required>
+                    <p class="form-hint" id="otp-hint">Demo tip: any 4 digits will work.</p>
+                    <p class="field-error" id="err-otp-code">Please enter the 4-digit OTP sent to your mobile.</p>
+                  </div>
+                  <div class="d-grid" id="verify-otp-wrap">
+                    <button type="submit" class="btn btn-royal d-none" id="verify-otp">Verify &amp; Log In</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div aria-live="assertive" id="login-alert" class="mt-3"></div>
+
+            <hr class="my-4">
+            <p class="text-center ink-muted mb-0">New to Vivaah Royal? <a href="register.html" class="fw-bold">Create a free profile</a></p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <i class="bi bi-shield-check text-gold me-1" aria-hidden="true"></i>
+          <small class="ink-muted">Your data is protected with 256-bit encryption. We never share your contact details without consent.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-2 small">
+    <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony</span>
+    <span><a href="help.html#a11y-statement" class="me-3">Accessibility statement</a><a href="contact.html">Contact support</a></span>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+"use strict";
+/* ---- password login ---- */
+document.getElementById("login-pw-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const id = document.getElementById("login-id");
+  const pw = document.getElementById("login-pw");
+  let ok = true;
+  const idOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(id.value.trim()) || /^[6-9]\d{9}$/.test(id.value.replace(/\s+/g, ""));
+  document.getElementById("err-login-id").classList.toggle("show", !idOk);
+  id.classList.toggle("is-invalid", !idOk);
+  const pwOk = pw.value.length > 0;
+  document.getElementById("err-login-pw").classList.toggle("show", !pwOk);
+  pw.classList.toggle("is-invalid", !pwOk);
+  if (!idOk) { id.focus(); ok = false; } else if (!pwOk) { pw.focus(); ok = false; }
+  if (!ok) return;
+  const name = id.value.includes("@") ? id.value.split("@")[0] : "Member";
+  setSession({ firstName: name.charAt(0).toUpperCase() + name.slice(1), fullName: name, loginId: id.value.trim(), joined: new Date().toISOString() });
+  document.getElementById("login-alert").innerHTML = '<div class="alert alert-success py-2" role="alert"><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Login successful. Taking you to your dashboard…</div>';
+  setTimeout(function () { window.location.href = "dashboard.html"; }, 900);
+});
+
+/* ---- show/hide password ---- */
+document.getElementById("toggle-pw").addEventListener("click", function () {
+  const pw = document.getElementById("login-pw");
+  const showing = pw.type === "text";
+  pw.type = showing ? "password" : "text";
+  this.setAttribute("aria-pressed", String(!showing));
+  this.setAttribute("aria-label", showing ? "Show password as plain text. Note: your password will be visible on screen." : "Hide password");
+  this.innerHTML = showing ? '<i class="bi bi-eye-fill" aria-hidden="true"></i>' : '<i class="bi bi-eye-slash-fill" aria-hidden="true"></i>';
+});
+
+/* ---- forgot password ---- */
+document.getElementById("forgot-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.getElementById("login-alert").innerHTML = '<div class="alert alert-warning py-2" role="alert"><i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>Demo: password reset link would be emailed to your registered address.</div>';
+});
+
+/* ---- OTP flow ---- */
+document.getElementById("send-otp").addEventListener("click", function () {
+  const mob = document.getElementById("otp-mobile");
+  const ok = /^[6-9]\d{9}$/.test(mob.value.replace(/\s+/g, ""));
+  document.getElementById("err-otp-mobile").classList.toggle("show", !ok);
+  mob.classList.toggle("is-invalid", !ok);
+  if (!ok) { mob.focus(); return; }
+  document.getElementById("otp-field-wrap").classList.remove("d-none");
+  const verify = document.getElementById("verify-otp");
+  verify.classList.remove("d-none");
+  document.getElementById("otp-code").focus();
+  this.innerHTML = '<i class="bi bi-arrow-clockwise me-2" aria-hidden="true"></i>Resend OTP';
+  showToast("OTP sent to +91 " + mob.value.replace(/\s+/g, "") + " (demo)");
+});
+document.getElementById("login-otp-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const code = document.getElementById("otp-code");
+  const ok = /^\d{4}$/.test(code.value.trim());
+  document.getElementById("err-otp-code").classList.toggle("show", !ok);
+  code.classList.toggle("is-invalid", !ok);
+  if (!ok) { code.focus(); return; }
+  setSession({ firstName: "Member", fullName: "Member", loginId: document.getElementById("otp-mobile").value, joined: new Date().toISOString() });
+  document.getElementById("login-alert").innerHTML = '<div class="alert alert-success py-2" role="alert"><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>OTP verified. Taking you to your dashboard…</div>';
+  setTimeout(function () { window.location.href = "dashboard.html"; }, 900);
+});
+</script>
+</body>
+</html>

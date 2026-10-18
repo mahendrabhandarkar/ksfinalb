@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Vivaah Royal Matrimony — member support, media enquiries, grievance officer and feedback form.">
+  <title>Contact Us — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-outline-light btn-sm px-3" href="login.html">Log in</a>
+          <a class="btn btn-gold btn-sm px-3" href="register.html">Join Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="py-4">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow justify-content-center">Sewa &amp; Sahyog</p>
+      <h1 class="h2 mb-2">We're all ears (and blessings)</h1>
+      <p class="ink-muted mb-0">Whether it's a question, feedback or a partnership — every message reaches a real human.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Form -->
+      <div class="col-lg-7" id="feedback">
+        <form class="card shadow-soft gold-top p-4 p-md-5" id="contact-form" novalidate aria-labelledby="form-title">
+          <h2 id="form-title" class="h4 mb-4">Send us a message</h2>
+          <div aria-live="assertive" id="contact-alert"></div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="c-name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" class="form-control" id="c-name" autocomplete="name" aria-describedby="err-c-name" required>
+              <p class="field-error" id="err-c-name">Please enter your name.</p>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="c-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" class="form-control" id="c-email" autocomplete="email" aria-describedby="err-c-email" required>
+              <p class="field-error" id="err-c-email">Please enter a valid email address.</p>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="c-topic">Topic <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-select" id="c-topic" aria-describedby="err-c-topic" required>
+                <option value="">Choose a topic</option>
+                <option>Membership &amp; billing</option>
+                <option>Profile &amp; verification</option>
+                <option>Report a member</option>
+                <option>Accessibility support</option>
+                <option>Media / partnerships</option>
+                <option>Other</option>
+              </select>
+              <p class="field-error" id="err-c-topic">Please choose a topic.</p>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="c-phone">Mobile (optional)</label>
+              <input type="tel" class="form-control" id="c-phone" inputmode="numeric" autocomplete="tel" placeholder="+91">
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="c-msg">Your message <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="form-control" id="c-msg" rows="5" aria-describedby="err-c-msg" required></textarea>
+              <p class="field-error" id="err-c-msg">Please write at least 20 characters so we can help properly.</p>
+            </div>
+            <div class="col-12 d-grid">
+              <button type="submit" class="btn btn-royal btn-lg"><i class="bi bi-send-fill me-2" aria-hidden="true"></i>Send message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Info cards -->
+      <div class="col-lg-5">
+        <div class="card shadow-soft mb-4">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3"><i class="bi bi-buildings-fill text-gold me-2" aria-hidden="true"></i>Registered office</h2>
+            <address class="ink-muted mb-0">
+              Vivaah Royal Matrimony Pvt. Ltd.<br>
+              Royal Heights, Level 9, G-Block,<br>
+              Bandra Kurla Complex, Mumbai 400051<br>
+              Maharashtra, India
+            </address>
+            <hr>
+            <p class="mb-1"><i class="bi bi-telephone-fill text-gold me-2" aria-hidden="true"></i><a href="tel:+911800123456">1800-123-456</a> <span class="ink-muted">(toll free)</span></p>
+            <p class="mb-1"><i class="bi bi-envelope-fill text-gold me-2" aria-hidden="true"></i><a href="mailto:care@vivaahroyal.example">care@vivaahroyal.example</a></p>
+            <p class="mb-0"><i class="bi bi-universal-access-circle text-gold me-2" aria-hidden="true"></i><a href="mailto:access@vivaahroyal.example">access@vivaahroyal.example</a></p>
+          </div>
+        </div>
+
+        <div class="card shadow-soft mb-4">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3"><i class="bi bi-clock-fill text-gold me-2" aria-hidden="true"></i>Support hours</h2>
+            <ul class="info-list">
+              <li><span class="k">Phone support</span><span class="v">9 AM – 9 PM, all days</span></li>
+              <li><span class="k">Email replies</span><span class="v">Within 24 hours</span></li>
+              <li><span class="k">Live chat</span><span class="v">10 AM – 8 PM</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card shadow-soft">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3"><i class="bi bi-shield-fill-check text-gold me-2" aria-hidden="true"></i>Grievance officer</h2>
+            <p class="ink-muted mb-1">As per IT Rules 2021:</p>
+            <p class="mb-0"><strong>Ms. Ananya Kulkarni</strong><br>Grievance Officer, Vivaah Royal Matrimony<br><a href="mailto:grievance@vivaahroyal.example">grievance@vivaahroyal.example</a><br>Response within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map placeholder -->
+    <div class="mt-5 rounded-xl overflow-hidden shadow-soft position-relative" style="height: 260px;" role="img" aria-label="Stylised map showing our Mumbai head office location in Bandra Kurla Complex">
+      <div class="pattern-paisley w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-cream">
+        <i class="bi bi-geo-alt-fill" style="font-size: 3rem; color: var(--royal-maroon);" aria-hidden="true"></i>
+        <p class="fw-bold mb-0" style="color: var(--royal-maroon);">Bandra Kurla Complex, Mumbai</p>
+        <p class="ink-muted small mb-0">Interactive map loads in the production build</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer pt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="index.html" aria-label="Vivaah Royal — home">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span class="text-white">Vivaah<span class="brand-gold">Royal</span></span>
+        </a>
+        <p style="max-width: 40ch;">Where eternal bonds begin. India's most trusted matrimony, crafted with royal care and accessible to every heart.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Explore</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="search.html">Search profiles</a></li>
+          <li><a href="matches.html">Daily matches</a></li>
+          <li><a href="membership.html">Membership plans</a></li>
+          <li><a href="dashboard.html">Member dashboard</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Company</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="help.html">Help centre</a></li>
+          <li><a href="contact.html#feedback">Share feedback</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h3 class="mb-3">Talk to us</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-telephone-fill text-gold me-2" aria-hidden="true"></i><a href="tel:+911800123456">1800-123-456 (toll free, 9am–9pm)</a></li>
+          <li><i class="bi bi-envelope-fill text-gold me-2" aria-hidden="true"></i><a href="mailto:care@vivaahroyal.example">care@vivaahroyal.example</a></li>
+          <li><i class="bi bi-geo-alt-fill text-gold me-2" aria-hidden="true"></i>Royal Heights, Bandra Kurla, Mumbai 400051</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal py-3 d-flex flex-wrap justify-content-between gap-2 small">
+      <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony. Crafted with <i class="bi bi-heart-fill text-gold" role="img" aria-label="love"></i> in India.</span>
+      <span><a href="#" class="me-3">Privacy policy</a><a href="#" class="me-3">Terms of use</a><a href="help.html#a11y-statement">Accessibility statement</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+"use strict";
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("c-name");
+  const email = document.getElementById("c-email");
+  const topic = document.getElementById("c-topic");
+  const msg = document.getElementById("c-msg");
+  let firstBad = null;
+
+  function mark(el, errId, ok) {
+    document.getElementById(errId).classList.toggle("show", !ok);
+    el.classList.toggle("is-invalid", !ok);
+    el.setAttribute("aria-invalid", String(!ok));
+    if (!ok && !firstBad) firstBad = el;
+  }
+  mark(name, "err-c-name", name.value.trim().length >= 2);
+  mark(email, "err-c-email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()));
+  mark(topic, "err-c-topic", topic.value !== "");
+  mark(msg, "err-c-msg", msg.value.trim().length >= 20);
+
+  const alertBox = document.getElementById("contact-alert");
+  if (firstBad) {
+    alertBox.innerHTML = '<div class="alert alert-danger py-2" role="alert"><i class="bi bi-exclamation-triangle-fill me-2" aria-hidden="true"></i>Please correct the highlighted fields.</div>';
+    firstBad.focus();
+    return;
+  }
+  alertBox.innerHTML = '<div class="alert alert-success py-2" role="alert"><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Message sent, ' + name.value.trim().split(" ")[0] + '! Reference #VR-' + Math.floor(100000 + Math.random() * 900000) + '. We will reply within 24 hours.</div>';
+  showToast("Message sent successfully. Dhanyavaad!");
+  this.reset();
+});
+</script>
+</body>
+</html>

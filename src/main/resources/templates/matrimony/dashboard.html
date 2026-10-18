@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your Vivaah Royal member dashboard — profile views, interests, today's matches and profile completeness at a glance.">
+  <title>My Dashboard — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="inbox.html">Inbox</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-gold btn-sm px-3" href="membership.html">Upgrade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="py-4">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="mb-2">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+      </ol>
+    </nav>
+
+    <!-- Welcome -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+      <div>
+        <h1 class="h3 mb-1">Namaste, <span id="welcome-name">Member</span> <span aria-hidden="true">🙏</span></h1>
+        <p class="ink-muted mb-0">Here is your royal summary for today.</p>
+      </div>
+      <a class="btn btn-outline-royal" href="profile.html?id=1"><i class="bi bi-person-gear me-1" aria-hidden="true"></i>Edit my profile</a>
+    </div>
+
+    <!-- Completeness -->
+    <section class="card shadow-soft gold-top mb-4" aria-labelledby="complete-title">
+      <div class="card-body p-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+          <h2 id="complete-title" class="h6 mb-0"><i class="bi bi-clipboard-check-fill text-gold me-2" aria-hidden="true"></i>Profile completeness</h2>
+          <span class="fw-bold" id="complete-pct" aria-hidden="true">0%</span>
+        </div>
+        <div class="completeness" role="progressbar" id="complete-bar" aria-labelledby="complete-title" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+        <p class="ink-muted small mt-2 mb-0" id="complete-tip">Complete profiles receive 4× more interests. Add photos and horoscope to shine brighter.</p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section aria-labelledby="stats-h" class="mb-4">
+      <h2 id="stats-h" class="visually-hidden">Activity summary</h2>
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <span class="icon-wrap" aria-hidden="true"><i class="bi bi-eye-fill"></i></span>
+            <div><div class="stat-num">1,284</div><p class="ink-muted small mb-0">Profile views</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card accent-maroon">
+            <span class="icon-wrap" aria-hidden="true"><i class="bi bi-heart-fill"></i></span>
+            <div><div class="stat-num">23</div><p class="ink-muted small mb-0">Interests received</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card accent-blue">
+            <span class="icon-wrap" aria-hidden="true"><i class="bi bi-send-fill"></i></span>
+            <div><div class="stat-num" id="stat-sent">0</div><p class="ink-muted small mb-0">Interests sent</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card accent-green">
+            <span class="icon-wrap" aria-hidden="true"><i class="bi bi-bookmark-star-fill"></i></span>
+            <div><div class="stat-num" id="stat-short">0</div><p class="ink-muted small mb-0">Shortlisted</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row g-4">
+      <!-- Today's matches -->
+      <section class="col-lg-8" aria-labelledby="today-title">
+        <div class="d-flex justify-content-between align-items-end mb-3">
+          <h2 id="today-title" class="h5 mb-0"><i class="bi bi-stars text-gold me-2" aria-hidden="true"></i>Today's matches for you</h2>
+          <a href="matches.html" class="btn-link-royal small">View all</a>
+        </div>
+        <div class="row g-3" id="today-grid"></div>
+      </section>
+
+      <!-- Right rail -->
+      <div class="col-lg-4">
+        <!-- Pending interests -->
+        <section class="card shadow-soft mb-4" aria-labelledby="pending-title">
+          <div class="card-header bg-white border-bottom-0 pt-3"><h2 id="pending-title" class="h6 mb-0"><i class="bi bi-bell-fill text-gold me-2" aria-hidden="true"></i>Pending interests</h2></div>
+          <div class="card-body pt-0" id="pending-list"></div>
+          <div class="card-footer bg-white border-top text-center py-2"><a href="inbox.html" class="btn-link-royal small">Open inbox</a></div>
+        </section>
+
+        <!-- Recent visitors -->
+        <section class="card shadow-soft mb-4" aria-labelledby="visitors-title">
+          <div class="card-header bg-white border-bottom-0 pt-3"><h2 id="visitors-title" class="h6 mb-0"><i class="bi bi-people-fill text-gold me-2" aria-hidden="true"></i>Recent visitors</h2></div>
+          <div class="card-body pt-0" id="visitor-list"></div>
+        </section>
+
+        <!-- Premium banner -->
+        <section class="card bg-royal text-white border-0 shadow-soft" aria-labelledby="prem-title">
+          <div class="card-body p-4 text-center">
+            <i class="bi bi-crown-fill text-gold-bright fs-1" aria-hidden="true"></i>
+            <h2 id="prem-title" class="h5 mt-2">Go Premium, go royal</h2>
+            <p class="small mb-3" style="color: var(--royal-gold-pale);">Unlimited chat, contact numbers and a dedicated advisor — from ₹1,999.</p>
+            <a href="membership.html" class="btn btn-gold w-100">View plans</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-2 small">
+    <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony</span>
+    <span><a href="help.html#a11y-statement" class="me-3">Accessibility statement</a><a href="contact.html">Contact support</a></span>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

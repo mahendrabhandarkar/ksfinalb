@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-fs="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search lakhs of verified matrimony profiles with 30+ filters — religion, community, mother tongue, city, education, profession and more.">
+  <title>Search Profiles — Vivaah Royal Matrimony</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238f1d22'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia' font-weight='700' fill='%23e9c46a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-royal sticky-top" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vivaah Royal — home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Vivaah<span class="brand-gold">Royal</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html" aria-current="page">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="a11y-toolbar me-2" role="group" aria-label="Accessibility controls">
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="sm" aria-label="Decrease text size"><span aria-hidden="true">A&#8722;</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="md" aria-label="Normal text size"><span aria-hidden="true">A</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-fs-btn="lg" aria-label="Increase text size"><span aria-hidden="true">A+</span></button>
+            <button type="button" class="btn btn-outline-light btn-sm" data-contrast-btn aria-pressed="false" aria-label="Toggle high contrast mode"><i class="bi bi-circle-half" aria-hidden="true"></i></button>
+          </div>
+          <span id="nav-user-slot" class="d-inline-flex"></span>
+          <a class="btn btn-outline-light btn-sm px-3" href="login.html">Log in</a>
+          <a class="btn btn-gold btn-sm px-3" href="register.html">Join Free</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="py-4">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="mb-2">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Search profiles</li>
+      </ol>
+    </nav>
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+      <div>
+        <h1 class="h2 mb-1">Search profiles</h1>
+        <p class="ink-muted mb-0">Lakhs of verified members. Filter your way to the one.</p>
+      </div>
+      <button class="btn btn-outline-royal d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#filter-panel" aria-expanded="false" aria-controls="filter-panel">
+        <i class="bi bi-funnel-fill me-1" aria-hidden="true"></i>Show / hide filters
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <!-- FILTER SIDEBAR -->
+      <div class="col-lg-3">
+        <div class="collapse d-lg-block" id="filter-panel">
+          <form id="search-form" class="filter-card" aria-label="Search filters" novalidate>
+            <div class="card-header py-3 px-3 d-flex justify-content-between align-items-center">
+              <span><i class="bi bi-funnel-fill me-2" aria-hidden="true"></i>Refine search</span>
+              <button type="reset" class="btn btn-sm btn-outline-light" id="clear-filters">Clear all</button>
+            </div>
+
+            <div class="accordion accordion-flush" id="filter-accordion">
+              <!-- Keyword -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fg-keyword" aria-expanded="true" aria-controls="fg-keyword">Keyword</button>
+                </h2>
+                <div id="fg-keyword" class="accordion-collapse collapse show" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <label class="form-label small" for="f-keyword">Name, profession, city…</label>
+                    <input type="search" class="form-control form-control-sm" id="f-keyword" placeholder="e.g. doctor, Mumbai, Iyer">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Basics -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fg-basic" aria-expanded="false" aria-controls="fg-basic">Basic details</button>
+                </h2>
+                <div id="fg-basic" class="accordion-collapse collapse" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <label class="form-label small" for="f-gender">Looking for</label>
+                    <select class="form-select form-select-sm mb-2" id="f-gender">
+                      <option value="">All profiles</option>
+                      <option value="F">Brides (Female)</option>
+                      <option value="M">Grooms (Male)</option>
+                    </select>
+                    <div class="row g-2 mb-2">
+                      <div class="col-6">
+                        <label class="form-label small" for="f-age-min">Age from</label>
+                        <select class="form-select form-select-sm" id="f-age-min"><option value="">Any</option><option>21</option><option>23</option><option>25</option><option>28</option><option>30</option><option>32</option></select>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label small" for="f-age-max">Age to</label>
+                        <select class="form-select form-select-sm" id="f-age-max"><option value="">Any</option><option>25</option><option>30</option><option>32</option><option>35</option><option>40</option></select>
+                      </div>
+                    </div>
+                    <label class="form-label small" for="f-marital">Marital status</label>
+                    <select class="form-select form-select-sm mb-2" id="f-marital">
+                      <option value="">Any</option><option>Never Married</option><option>Divorced</option><option>Widowed</option><option>Awaiting Divorce</option>
+                    </select>
+                    <label class="form-label small" for="f-diet">Diet</label>
+                    <select class="form-select form-select-sm" id="f-diet">
+                      <option value="">Any</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>Eggetarian</option><option>Jain Food</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Religious -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fg-rel" aria-expanded="false" aria-controls="fg-rel">Religion &amp; language</button>
+                </h2>
+                <div id="fg-rel" class="accordion-collapse collapse" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <label class="form-label small" for="f-religion">Religion</label>
+                    <select class="form-select form-select-sm mb-2" id="f-religion">
+                      <option value="">Any religion</option><option>Hindu</option><option>Muslim</option><option>Christian</option><option>Sikh</option><option>Jain</option><option>Buddhist</option>
+                    </select>
+                    <label class="form-label small" for="f-community">Community</label>
+                    <select class="form-select form-select-sm mb-2" id="f-community">
+                      <option value="">Any community</option><option>Brahmin</option><option>Kshatriya</option><option>Agarwal</option><option>Khatri</option><option>Iyer</option><option>Nair</option><option>Reddy</option><option>Patel</option><option>Sindhi</option><option>Kayastha</option><option>Jat</option><option>Bunt</option>
+                    </select>
+                    <label class="form-label small" for="f-tongue">Mother tongue</label>
+                    <select class="form-select form-select-sm" id="f-tongue">
+                      <option value="">Any tongue</option><option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Tamil</option><option>Telugu</option><option>Kannada</option><option>Malayalam</option><option>Punjabi</option><option>Bengali</option><option>Konkani</option><option>Sindhi</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fg-loc" aria-expanded="false" aria-controls="fg-loc">Location</button>
+                </h2>
+                <div id="fg-loc" class="accordion-collapse collapse" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <label class="form-label small" for="f-country">Country</label>
+                    <select class="form-select form-select-sm mb-2" id="f-country">
+                      <option value="">Any country</option><option>India</option><option>United Arab Emirates</option><option>United States</option><option>United Kingdom</option><option>Singapore</option><option>Australia</option><option>Canada</option>
+                    </select>
+                    <label class="form-label small" for="f-city">City</label>
+                    <input type="text" class="form-control form-control-sm" id="f-city" placeholder="e.g. Mumbai">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Professional -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fg-prof" aria-expanded="false" aria-controls="fg-prof">Education &amp; career</button>
+                </h2>
+                <div id="fg-prof" class="accordion-collapse collapse" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <label class="form-label small" for="f-edu">Highest education</label>
+                    <select class="form-select form-select-sm" id="f-edu">
+                      <option value="">Any education</option><option>B.Tech</option><option>M.Tech</option><option>MBBS</option><option>MD</option><option>MBA</option><option>CA</option><option>M.Com</option><option>B.Arch</option><option>Ph.D</option><option>LLB</option><option>M.Sc</option><option>B.Des</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Settings -->
+              <div class="accordion-item filter-group">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fg-set" aria-expanded="false" aria-controls="fg-set">Profile settings</button>
+                </h2>
+                <div id="fg-set" class="accordion-collapse collapse" data-bs-parent="#filter-accordion">
+                  <div class="accordion-body">
+                    <div class="form-check chip-check"><input class="form-check-input" type="checkbox" id="f-verified"><label class="form-check-label" for="f-verified">Verified profiles only <i class="bi bi-patch-check-fill text-primary" aria-hidden="true"></i></label></div>
+                    <div class="form-check chip-check"><input class="form-check-input" type="checkbox" id="f-premium"><label class="form-check-label" for="f-premium">Premium members only</label></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 d-grid">
+              <button type="submit" class="btn btn-royal"><i class="bi bi-search me-1" aria-hidden="true"></i>Apply filters</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="col-lg-9" id="results-region">
+        <div class="result-toolbar d-flex flex-wrap align-items-center justify-content-between gap-2 px-3 py-2 mb-3">
+          <p class="mb-0 fw-semibold" id="result-count" aria-live="polite" aria-atomic="true">Loading…</p>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <label class="form-label mb-0 small fw-semibold" for="sort-by">Sort by</label>
+            <select class="form-select form-select-sm w-auto" id="sort-by">
+              <option value="rel">Relevance</option>
+              <option value="age-asc">Age: low to high</option>
+              <option value="age-desc">Age: high to low</option>
+              <option value="online">Online first</option>
+              <option value="premium">Premium first</option>
+            </select>
+            <div class="btn-group btn-group-sm view-toggle" role="group" aria-label="Result layout">
+              <button type="button" class="btn btn-outline-royal active" id="view-grid" aria-pressed="true"><i class="bi bi-grid-3x2-gap-fill" aria-hidden="true"></i><span class="visually-hidden">Grid view</span></button>
+              <button type="button" class="btn btn-outline-royal" id="view-list" aria-pressed="false"><i class="bi bi-list-ul" aria-hidden="true"></i><span class="visually-hidden">List view</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="search-results" aria-live="polite">
+          <div class="col-12 text-center py-5">
+            <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading results…</span></div>
+          </div>
+        </div>
+
+        <nav aria-label="Search result pages" class="mt-4 d-flex justify-content-center">
+          <ul class="pagination pagination-royal mb-0" id="search-pagination"></ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer pt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="index.html" aria-label="Vivaah Royal — home">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span class="text-white">Vivaah<span class="brand-gold">Royal</span></span>
+        </a>
+        <p style="max-width: 40ch;">Where eternal bonds begin. India's most trusted matrimony, crafted with royal care and accessible to every heart.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Explore</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="search.html">Search profiles</a></li>
+          <li><a href="matches.html">Daily matches</a></li>
+          <li><a href="membership.html">Membership plans</a></li>
+          <li><a href="dashboard.html">Member dashboard</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="mb-3">Company</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="help.html">Help centre</a></li>
+          <li><a href="contact.html#feedback">Share feedback</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h3 class="mb-3">Talk to us</h3>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-telephone-fill text-gold me-2" aria-hidden="true"></i><a href="tel:+911800123456">1800-123-456 (toll free, 9am–9pm)</a></li>
+          <li><i class="bi bi-envelope-fill text-gold me-2" aria-hidden="true"></i><a href="mailto:care@vivaahroyal.example">care@vivaahroyal.example</a></li>
+          <li><i class="bi bi-geo-alt-fill text-gold me-2" aria-hidden="true"></i>Royal Heights, Bandra Kurla, Mumbai 400051</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal py-3 d-flex flex-wrap justify-content-between gap-2 small">
+      <span>© <span id="footer-year">2026</span> Vivaah Royal Matrimony. Crafted with <i class="bi bi-heart-fill text-gold" role="img" aria-label="love"></i> in India.</span>
+      <span><a href="#" class="me-3">Privacy policy</a><a href="#" class="me-3">Terms of use</a><a href="help.html#a11y-statement">Accessibility statement</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
